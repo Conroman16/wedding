@@ -16,5 +16,20 @@
   "bugs": {
     "url": "https://github.com/Conroman16/wedding/issues"
   },
-  "homepage": "https://github.com/Conroman16/wedding#readme"
+  "homepage": "https://github.com/Conroman16/wedding#readme",
+  "dependencies": {
+    "bcrypt": "^1.0.1",
+    "body-parser": "^1.15.2",
+    "connect-sqlite3": "^0.9.8",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.14.0",
+    "express-session": "^1.14.2",
+    "node-sass-middleware": "^0.10.0",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "sequelize": "^3.28.0",
+    "sqlite3": "^3.1.8",
+    "swig-templates": "^2.0.2",
+    "underscore": "^1.8.3"
+  }
 }
