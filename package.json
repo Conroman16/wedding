@@ -1,0 +1,19 @@
+{
+  "name": "wedding",
+  "version": "1.0.0",
+  "description": "Wedding website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"These are not the tests that you are looking for...\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Conroman16/wedding.git"
+  },
+  "author": "Connor Kennedy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Conroman16/wedding/issues"
+  },
+  "homepage": "https://github.com/Conroman16/wedding#readme"
+}
