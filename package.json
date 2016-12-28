@@ -4,7 +4,8 @@
   "description": "Wedding website",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"These are not the tests that you are looking for...\""
+    "test": "echo \"These are not the tests that you are looking for...\"",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",

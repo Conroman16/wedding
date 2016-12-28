@@ -1,0 +1,21 @@
+# Compiled CSS directory
+static/css/
+
+# Databases
+*.db
+
+# Private config files
+*.env.js
+
+# Dependency directory
+node_modules
+
+# Logs
+npm-debug.log*
+
+# WebStorm
+.idea/
+
+# OS X
+._.DS_Store
+.DS_Store
