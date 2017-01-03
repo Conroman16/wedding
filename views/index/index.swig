@@ -3,7 +3,8 @@
 {% block body %}
     <h3>Hi</h3>
     <br>
-    <a href="{{ LogoutPath }}">Logout</a>
+	{%  if IsAuthed %}<a href="{{ LogoutPath }}">Logout</a>{% endif %}
+	{%  if IsNotAuthed %}<a href="{{ LoginPath }}">Login</a>{% endif %}
 {% endblock %}
 
 {% block scripts %}
