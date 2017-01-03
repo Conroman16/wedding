@@ -1,5 +1,9 @@
-if (!process.env.NODE_ENV)
-    process.env.NODE_ENV = 'development';
+if (!process.env.NODE_ENV){
+	if (process.argv[2])
+		process.env.NODE_ENV = process.argv[2];
+	else
+		process.env.NODE_ENV = 'development';
+}
 
 console.log(`${process.env.NODE_ENV.toUpperCase()} MODE`);
 
