@@ -2,8 +2,29 @@ var fs        = require('fs');
 var path      = require('path');
 var Sequelize = require('sequelize');
 var basename  = path.basename(module.filename);
-var config    = require('./config.json')[process.env.NODE_ENV];
+var allConfig = require('./config.json');
 var db        = {};
+var appConfig = require('../lib/config');
+
+if (!process.env.DATABASE_URL)
+	var config = allConfig[process.env.NODE_ENV];
+else {
+	var dbUrlMatch = process.env.DATABASE_URL.match(/postgres:\/\/([^:]+):([^@]+)@([^:]+):(\d+)\/(.+)/);
+	console.log('MATCHES', dbUrlMatch);
+	var config = {
+		dialect: 'postgres',
+		protocol: 'postgres',
+		database: dbUrlMatch[5],
+		username: dbUrlMatch[1],
+		password: dbUrlMatch[2],
+		host: dbUrlMatch[3],
+		port: dbUrlMatch[4],
+		logging: appConfig.isDev,
+		dialectOptions: {
+			ssl: true
+		}
+	};
+}
 
 if (config.use_env_variable)
   var sequelize = new Sequelize(process.env[config.use_env_variable]);
