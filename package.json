@@ -7,6 +7,9 @@
     "test": "echo \"These are not the tests that you are looking for...\"",
     "start": "node index.js"
   },
+    "engines": {
+	  "node": "6.x"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Conroman16/wedding.git"
