@@ -10,7 +10,6 @@ if (!process.env.DATABASE_URL)
 	var config = allConfig[process.env.NODE_ENV];
 else {
 	var dbUrlMatch = process.env.DATABASE_URL.match(/postgres:\/\/([^:]+):([^@]+)@([^:]+):(\d+)\/(.+)/);
-	console.log('MATCHES', dbUrlMatch);
 	var config = {
 		dialect: 'postgres',
 		protocol: 'postgres',
