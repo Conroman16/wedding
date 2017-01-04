@@ -1,19 +1,26 @@
-if (!process.env.NODE_ENV){
-	if (process.argv[2])
-		process.env.NODE_ENV = process.argv[2];
-	else
-		process.env.NODE_ENV = 'development';
-}
+var pm2 = require('pm2');
+var os = require('os');
 
-console.log(`${process.env.NODE_ENV.toUpperCase()} MODE`);
+var memory = process.env.WEB_MEMORY || 512;
 
-var db = require('./db'),
-    server = require('./lib/server'),
-    events = require('./lib/events');
 
-events.init();
-events.init();
+pm2.connect(() => {
+	pm2.start({
+		script: 'app.js',
+		name: 'dkmerger',
+		exec_mode: 'cluster',
+		instances: os.cpus().length > 4 ? 4 : os.,
+		max_memory_restart: memory
+	}, (err) => {
+		if (err)
+			return console.error(err.stack || err);
+		console.log('PM2 and app have started successfully');
 
-db.sequelize.sync().then(() => {
-    server.start();
+		pm2.launchBus((err, bus) => {
+			if (err)
+				return console.error(err.stack || err);
+			bus.on('log:out', (packet) => console.log('[App:%s] %s', packet.process.name, packet.data));
+			bus.on('log:err', (packet) => console.error('[App:%s][Err] %s', packet.process.name, packet.data));
+		});
+	});
 });
