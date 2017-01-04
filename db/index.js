@@ -18,7 +18,7 @@ else {
 		password: dbUrlMatch[3],
 		host: dbUrlMatch[4],
 		port: dbUrlMatch[5],
-		logging: appConfig.isDev,
+		logging: appConfig.isDev ? false : undefined,
 		dialectOptions: {
 			ssl: true
 		}
