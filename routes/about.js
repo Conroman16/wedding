@@ -10,7 +10,7 @@ module.exports = () => {
 			{ key: 'cpu', value: cpus[0].model },
 			{ key: 'cores', value: cpus.length }
 		];
-		res.render('about/index', { items: items });
+		res.render('server/index', { items: items });
 	});
 
 	return router;
