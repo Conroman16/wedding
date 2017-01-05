@@ -18,7 +18,7 @@
 <table>
 	{% for item in items %}
 	<tr>
-		<td><strong>{{ item.key|capitalize }}</strong></td><td>{{ item.value }}</td>
+		<td><strong>{{ item.key|title }}</strong></td><td>{{ item.value }}</td>
 	</tr>
 	{% endfor %}
 </table>
