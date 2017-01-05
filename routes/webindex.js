@@ -1,5 +1,5 @@
-var router = require('express').Router();
-var auth = require('../lib/auth');
+let router = require('express').Router();
+let auth = require('../lib/auth');
 
 module.exports = () => {
 

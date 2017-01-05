@@ -1,6 +1,6 @@
 module.exports = (sequelize, DataTypes) => {
 
-	var Rsvp = sequelize.define('Rsvp', {
+	return sequelize.define('Rsvp', {
 		id: {
 			type: DataTypes.INTEGER,
 			allowNull: false,
@@ -36,6 +36,4 @@ module.exports = (sequelize, DataTypes) => {
 			allowNull: false
 		}
 	});
-
-	return Rsvp;
 };
