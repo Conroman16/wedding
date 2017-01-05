@@ -9,7 +9,7 @@ pm2.connect(() => {
 		script: 'app.js',
 		name: 'dkmerger',
 		exec_mode: 'cluster',
-		instances: os.cpus().length > 4 ? 4 : os.,
+		instances: os.cpus().length > 4 ? 4 : os.cpus(),
 		max_memory_restart: memory
 	}, (err) => {
 		if (err)
