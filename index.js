@@ -2,14 +2,14 @@ var pm2 = require('pm2');
 var os = require('os');
 
 var memory = process.env.WEB_MEMORY || 512;
-
+var instances = os.cpus().length > 4 ? 4 : os.cpus().length;
 
 pm2.connect(() => {
 	pm2.start({
 		script: 'app.js',
 		name: 'dkmerger',
 		exec_mode: 'cluster',
-		instances: os.cpus().length > 4 ? 4 : os.,
+		instances: instances,
 		max_memory_restart: memory
 	}, (err) => {
 		if (err)
