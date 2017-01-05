@@ -13,6 +13,7 @@ pm2.connect(!usePm2Daemon, () => {
 		exec_mode: 'cluster',
 		instances: instances,
 		max_memory_restart: `${memory}M`,
+		merge_logs: true,
 		env: process.env
 	}, (err) => {
 		if (err)
