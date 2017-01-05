@@ -7,14 +7,14 @@ module.exports = () => {
 		res.render('index/index');
     });
 
-	router.get('/contact', (req, res) => {
+	router.get('/rsvp', (req, res) => {
 		auth.generateToken()
-			.then((token) => res.render('index/contact', { token }))
+			.then((token) => res.render('index/rsvp', { token }))
 			.catch((err) => res.status(500).send(err));
 	});
 
-	router.post('/contact', (req, res) => {
-		console.log('CONTACT FORM POSTED', req.body);
+	router.post('/rsvp', (req, res) => {
+		console.log('RSVP POSTED', req.body);
 		res.sendStatus(200);
 	});
 
