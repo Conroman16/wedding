@@ -1,10 +1,10 @@
-var fs = require('fs');
-var path = require('path');
-var Sequelize = require('sequelize');
-var appConfig = require('../lib/config');
-var dbConfig = require('./config.json');
-var config = {};
-var db = {};
+let fs = require('fs');
+let path = require('path');
+let Sequelize = require('sequelize');
+let appConfig = require('../lib/config');
+let dbConfig = require('./config.json');
+let config = {};
+let db = {};
 
 if (!process.env.DATABASE_URL)
 	config = dbConfig[process.env.NODE_ENV];
@@ -25,7 +25,7 @@ else {
 	};
 }
 
-var sequelize = new Sequelize(config.database, config.username, config.password, config);
+let sequelize = new Sequelize(config.database, config.username, config.password, config);
 
 fs.readdirSync(path.join(__dirname, 'models'))
 	.filter((file) => (file.indexOf('.') !== 0) && (file.slice(-3) === '.js'))

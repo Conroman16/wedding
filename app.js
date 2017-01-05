@@ -7,7 +7,7 @@ if (!process.env.NODE_ENV){
 
 console.log(`${process.env.NODE_ENV.toUpperCase()} MODE`);
 
-var db = require('./db'),
+let db = require('./db'),
 	server = require('./lib/server'),
 	events = require('./lib/events');
 

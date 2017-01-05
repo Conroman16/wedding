@@ -1,8 +1,8 @@
-var router = require('express').Router();
-var passport = require('passport');
-var db = require('../db');
-var config = require('../lib/config');
-var auth = require('../lib/auth');
+let router = require('express').Router();
+let passport = require('passport');
+let db = require('../db');
+let config = require('../lib/config');
+let auth = require('../lib/auth');
 
 module.exports = () => {
 
@@ -45,10 +45,10 @@ module.exports = () => {
 	});
 
 	router.post('/register', (req, res) => {
-		var firstName = req.body.firstname || '';
-		var lastName = req.body.lastname || '';
-		var email = req.body.email || '';
-		var password = req.body.password || '';
+		let firstName = req.body.firstname || '';
+		let lastName = req.body.lastname || '';
+		let email = req.body.email || '';
+		let password = req.body.password || '';
 
 		if (!email)
 			res.status(500).send({success: false, error: 'invalid username'});

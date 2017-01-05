@@ -1,7 +1,7 @@
-var os = require('os');
-var router = require('express').Router();
+let os = require('os');
+let router = require('express').Router();
 // var _ = require('underscore');
-var pm2 = require('pm2');
+let pm2 = require('pm2');
 
 module.exports = () => {
 
@@ -10,8 +10,8 @@ module.exports = () => {
 			if (err)
 				return res.status(500).send(err);
 
-			var cpus = os.cpus();
-			var items = [
+			let cpus = os.cpus();
+			let items = [
 				{ key: 'cpu', value: cpus[0].model },
 				{ key: 'cores', value: cpus.length },
 				{ key: 'cluster nodes', value: procs.length }
