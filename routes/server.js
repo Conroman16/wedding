@@ -2,6 +2,7 @@ let os = require('os');
 let router = require('express').Router();
 let pm2 = require('pm2');
 let config = require('../lib/config');
+let _ = require('underscore');
 
 module.exports = () => {
 
@@ -18,9 +19,19 @@ module.exports = () => {
 				{ key: 'cluster nodes', value: pm_env.instances },
 				{ key: 'cwd', value: pm_env.pm_cwd },
 				{ key: 'exec', value: pm_env.pm_exec_path },
-				{ key: 'unstable restarts', value: pm_env.unstable_restarts }
+				{ key: 'NodeJS version', value: pm_env.node_version }
 			];
-			res.render('server/about', { items: items });
+			let nodes = _.map(description, (desc) => {
+				return {
+					id: desc.pm_id,
+					status: desc.pm2_env.status,
+					memory: `${(desc.monit.memory / 1024 / 1024).toFixed(2)} MB`,
+					cpu: `${desc.monit.cpu}%`,
+					uptime: desc.pm2_env.pm_uptime,
+					unstableRestarts: desc.pm2_env.unstable_restarts
+				};
+			});
+			res.render('server/about', { items: items, nodes: nodes });
 		});
 	});
 
