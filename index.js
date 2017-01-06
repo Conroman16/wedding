@@ -3,8 +3,9 @@ let os = require('os');
 let events = require('./lib/events');
 let config = require('./lib/config');
 
+let cpus = os.cpus();
 let memory = process.env.WEB_MEMORY || 512; // Megabytes
-let instances = os.cpus().length > 4 ? 4 : os.cpus().length;
+let instances = cpus.length > 4 ? 4 : cpus.length;
 let usePm2Daemon = true;
 
 pm2.connect(!usePm2Daemon, () => {
