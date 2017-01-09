@@ -2,9 +2,6 @@
 
 {% block style %}
 <style>
-	table{
-		border-collapse: collapse;
-	}
 	td{
 		padding: 0.5em 1em
 	}
@@ -18,7 +15,7 @@
 <div class="grid">
 	<div class="col-1-1"><br><br></div>
 	<div class="col-1-1">
-		<table style="width:100%;">
+		<table class="max-width">
 			{% for item in items %}
 				<tr>
 					<td><strong>{{ item.key|title }}</strong></td><td>{{ item.value }}</td>
@@ -31,7 +28,7 @@
 	<div class="col-1-{{ nodes.length }}">
 		<table>
 			<tr>
-				<td colspan="4" style="text-align:center;">
+				<td colspan="4" class="center">
 					<strong>Node {{ node.id }}</strong>
 				</td>
 			</tr>
