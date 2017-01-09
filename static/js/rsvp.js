@@ -70,10 +70,12 @@ function validateForm(){
 
 function submitForm(){
 	var $name = $('.input[name="name"]');
-	var $message = $('.input[name="message"]');
 	var $email = $('.input[name="email"]');
 	var $phone = $('.input[name="phone"]');
+	var $attending = $('.input[name="attending"]');
+	var $attendees = $('.input[name="attendees"]');
 	var $token = $('.input[name="token"]');
+	var $message = $('.input[name="message"]');
 	var url = location.pathname;
 
 	if (validateForm()){
@@ -81,8 +83,10 @@ function submitForm(){
 			name: $name.val(),
 			email: $email.val(),
 			phone: $phone.val(),
-			message: $message.val(),
-			token: $token.val()
+			token: $token.val(),
+			attending: $attending.val(),
+			attendees: $attendees.val(),
+			message: $message.val()
 		}).done(function(data){
 			clearForm();
 			if (config.gaLoaded)
