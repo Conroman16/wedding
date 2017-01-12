@@ -1,7 +1,6 @@
 let router = require('express').Router();
 let auth = require('../lib/auth');
 let email = require('../lib/email');
-let _ = require('underscore');
 
 module.exports = () => {
 
@@ -18,15 +17,15 @@ module.exports = () => {
 			return res.status(500).send({ error: 'Invalid value for name, attending, or attendees' });
 
 		auth.verifyFormToken(req.body.token)
-			.catch((err) => res.status(500).send(err))
 			.then((valid) => {
 				if (!valid)
 					return res.sendStatus(500);
 
 				email.sendEmail('cjtkennedy@gmail.com', 'RSVP Posted', { title: 'RSVP Posted', data: JSON.stringify(req.body) })
-					.catch((err) => res.status(500).send(err))
+					.catch((err) => res.status(500).send({ error: err }))
 					.then((response) => res.sendStatus(200));
-			});
+			})
+			.catch((err) => res.status(500).send({ error: err }));
 	});
 
 	return router;
