@@ -2,6 +2,8 @@ let router = require('express').Router();
 let auth = require('../lib/auth');
 let email = require('../lib/email');
 let db = require('../db');
+let excel = require('../lib/excel');
+let _ = require('underscore');
 
 module.exports = () => {
 
@@ -48,5 +50,38 @@ module.exports = () => {
 			})
 			.catch((err) => res.status(500).send(err));
 	});
+
+	router.get('/export', (req, res) => {
+		console.log(db.Rsvp.$modelOptions);
+
+		db.Rsvp.findAll()
+			.then((rsvps) => {
+				rsvps = _.map(rsvps, (rsvp) => {
+					rsvp.dataValues = _.reject(rsvp.dataValues, (value, key) => key === 'updatedAt');
+					return rsvp;
+				});
+				let columns = _.map(_.first(rsvps).dataValues, (value, key) => {
+					let ret = { caption: key };
+					let type = 'string';
+					if (_.isNumber(value))
+						type = 'number';
+					else if (_.isBoolean(value))
+						type = 'boolean';
+					return _.extend(ret, { type: type });
+				});
+				let rows = _.map(rsvps, (rsvp) => _.values(rsvp.dataValues));
+
+				let spreadsheet = excel.export(columns, rows, 'RSVPs');
+
+				res.setHeader('Content-Type', 'application/vnd.openxmlformats');
+				res.setHeader('Content-Disposition', `attachment; filename=RSVP_Report.xlsx`);
+				res.end(spreadsheet, 'binary');
+			})
+			.catch((err) => {
+				console.error(err);
+				res.status(500).send();
+			});
+	});
+
 	return router;
 };
