@@ -84,7 +84,7 @@ function submitForm(){
 			email: $email.val(),
 			phone: $phone.val(),
 			token: $token.val(),
-			attending: $attending.val(),
+			attending: !!$attending.val(),
 			attendees: $attendees.val(),
 			message: $message.val()
 		}).done(function(data){
@@ -92,7 +92,9 @@ function submitForm(){
 			if (config.gaLoaded)
 				ga('send', 'pageview', url);
 		}).fail(function(xhr, status, err){
-			alert('Error submitting contact data.  Check your submission and try again.');
+			console.error('Error submitting rsvp', err);
+		}).always(function(){
+			clearForm();
 		});
 	}
 }
