@@ -30,7 +30,7 @@ module.exports = () => {
 				if (err)
 					return next(err);
 				else if (req.query.u)
-					return res.redirect(decodeURIComponent(u));
+					return res.redirect(decodeURIComponent(req.query.u));
 				else
 					return res.redirect('/');
 			});
