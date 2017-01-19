@@ -1,10 +1,10 @@
 #dev-data-banner-wrap{
-  float: right;
   width: 250px;
-  transform: translateX(90px) translateY(24px);
+  transform: translateX(-80px) translateY(22px);
+	position: fixed;
 
   .dev-data-banner{
-    transform: rotate(45deg);
+    transform: rotate(-45deg);
 
     .dev-data-banner-text{
       background-color: #333;
