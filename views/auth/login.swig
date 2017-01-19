@@ -17,7 +17,7 @@
 {% block scripts %}
 	<script>
 		var loginPath = '{{ LoginPath }}';
-		var loginUrl = loginPath + (req.search || '');
+		var loginUrl = loginPath + (location.search || '');
 		$(function(){
 			$('#login-form').attr('action', loginUrl);
 		});
