@@ -27,13 +27,6 @@ table{
 	border-collapse: collapse;
 }
 
-//body{
-//	background-image: url('/static/img/background.jpg');
-//	background-size: cover;
-//	background-repeat: no-repeat;
-//	background-position: center 12%;
-//}
-
 .body-wrap{
 	margin-top: 6vh;
 }
@@ -54,29 +47,25 @@ body {
 	background-size: cover;
 	background-position: center 12%;
 	background-image: url($littleBackgroundImgUrl);
-
-	&.loaded{
-		background-image: url($bigBackgroundImgUrl);
-	}
 }
 
 @supports (background-image: filter(url('i.jpg'), blur(1px))) {
-	body {
+	.bg-lazyload {
 		transform: translateZ(0);
 	}
-	body.loaded {
+	.bg-lazyload.loaded {
 		animation: sharpen .5s both;
 	}
-	@keyframes sharpen {
-		from {
-			background-image: -webkit-filter(url($bigBackgroundImgUrl), blur(20px));
-			background-image: filter(url($bigBackgroundImgUrl), blur(20px));
-		}
-		to {
-			background-image: -webkit-filter(url($bigBackgroundImgUrl), blur(0px));
-			background-image: filter(url($bigBackgroundImgUrl), blur(0px));
-		}
-	}
+	//@keyframes sharpen {
+	//	from {
+	//		background-image: -webkit-filter(url($bigBackgroundImgUrl), blur(20px));
+	//		background-image: filter(url($bigBackgroundImgUrl), blur(20px));
+	//	}
+	//	to {
+	//		background-image: -webkit-filter(url($bigBackgroundImgUrl), blur(0px));
+	//		background-image: filter(url($bigBackgroundImgUrl), blur(0px));
+	//	}
+	//}
 }
 
 // UI helpers
