@@ -23,6 +23,12 @@
 							<input type="password" class="form-control password" name="password" />
 						</div>
 					</div>
+					<div class="form-group row">
+						<div class="col-2"></div>
+						<div class="col-10">
+							<div class="error-fb form-control-feedback hide"></div>
+						</div>
+					</div>
 					<div class="row">
 						<div class="col"></div>
 						<div class="col-2">
@@ -63,7 +69,10 @@
 						window.location.href = data.redirectUrl || '/';
 					}).catch(function(err){
 					    errorForm();
-					    console.error(err.responseJSON);
+					    console.log(err);
+					    var fb = err.responseJSON.error || '';
+					    if (fb)
+							$('.error-fb').text(fb).removeClass('hide');
 					});
 				});
 		});
