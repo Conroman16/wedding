@@ -4,11 +4,11 @@
 	{#<div class="header-bg bg-lazyload" data-url="/static/img/background.jpg">#}
 	<div class="header-bg">
 		<div class="container">
-			<div class="row">
+			<div class="row align-items-center">
 				<div class="col-lg-12">
 					<div class="banner-text">
-						<h1>HELLO</h1>
-						<h2>Subtext goes here</h2>
+						<h1>C + J</h1>
+						<h2>Yep, that's right, we're tying the knot!</h2>
 					</div>
 				</div>
 			</div>
