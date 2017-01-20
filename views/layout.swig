@@ -37,6 +37,7 @@
 </head>
 <body class="bg-lazyload" data-url="/static/img/background.jpg">
 <div class="body-wrap container">
+	{% include './navbar.swig' %}
 	{% block body %}{% endblock %}
 </div>
 <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
