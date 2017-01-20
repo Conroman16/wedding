@@ -1,26 +1,63 @@
 {% extends '../layout.swig' %}
 
+{% block style %}
+	<link rel="stylesheet" href="/static/css/authforms.css" />
+{% endblock %}
+
 {% block body %}
-    <form id="create-form" method="post" action="{{ RegisterPath }}">
-        <label for="firstname">First Name:</label>
-        <input type="text" class="firstname" name="firstname" />
 
-        <label for="lastname">Last Name:</label>
-        <input type="text" class="lastname" name="lastname" />
+    {#<br>#}
+    {#<a href="{{ LoginPath }}">Login</a>#}
+	<div class="register-form-wrap container">
+		<div class="row">
+			<div class="col"></div>
+			<div class="col-6">
+				<form id="create-form" method="post" action="{{ RegisterPath }}" class="auth-form">
+					<div class="form-group row">
+						<label for="firstname" class="col-3 col-form-label">First Name</label>
+						<div class="col-9">
+							<input type="text" class="form-control firstname" name="firstname" />
+						</div>
+					</div>
 
-		<label for="email">Email:</label>
-		<input type="text" class="email" name="email" />
+					<div class="form-group row">
+						<label for="lastname" class="col-3 col-form-label">Last Name</label>
+						<div class="col-9">
+							<input type="text" class="form-control lastname" name="lastname" />
+						</div>
+					</div>
 
-        <label for="password">Password:</label>
-        <input type="password" class="password" name="password" />
+					<div class="form-group row">
+						<label for="email" class="col-3 col-form-label">Email</label>
+						<div class="col-9">
+							<input type="text" class="form-control email" name="email" />
+						</div>
+					</div>
 
-        <label for="passwordverify">Verify Password:</label>
-        <input type="password" class="passwordverify" name="passwordverify" />
+					<div class="form-group row">
+						<label for="password" class="col-3 col-form-label">Password</label>
+						<div class="col-9">
+							<input type="password" class="form-control password" name="password" />
+						</div>
+					</div>
 
-        <input type="submit" value="Create Account">
-    </form>
-    <br>
-    <a href="{{ LoginPath }}">Login</a>
+					<div class="form-group row">
+						<label for="passwordverify" class="col-3 col-form-label">Verify Password</label>
+						<div class="col-9">
+							<input type="password" class="form-control passwordverify" name="passwordverify" />
+						</div>
+					</div>
+					<div class="row">
+						<div class="col"></div>
+						<div class="col-3">
+							<input type="submit" value="Create Account">
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="col"></div>
+		</div>
+	</div>
 {% endblock %}
 
 {% block scripts %}
