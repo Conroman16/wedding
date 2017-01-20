@@ -14,7 +14,7 @@
 			<li class="nav-item hide">
 				<a class="nav-link" href="/rsvp">RSVP</a>
 			</li>
-			<li>
+			<li class="nav-item">
 				{% if IsNotAuthed %}<a class="nav-link" href="{{ LoginPath }}">Login</a>{% endif %}
 			</li>
 			{% if IsAuthed %}
