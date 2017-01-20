@@ -8,14 +8,14 @@
 	<link rel="icon" href="/static/img/favicon.ico" type="image/ico"/>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 	<link rel="stylesheet" href="/static/css/main.css" />
-	{% if IsDev %}
-		<link rel="stylesheet" href="/static/css/devdata.css" />
-		<div id="dev-data-banner-wrap" class="clearfix">
-			<div class="dev-data-banner">
-				<p class="dev-data-banner-text">Dev Data</p>
-			</div>
-		</div>
-	{% endif %}
+	{#{% if IsDev %}#}
+		{#<link rel="stylesheet" href="/static/css/devdata.css" />#}
+		{#<div id="dev-data-banner-wrap" class="clearfix">#}
+			{#<div class="dev-data-banner">#}
+				{#<p class="dev-data-banner-text">Dev Data</p>#}
+			{#</div>#}
+		{#</div>#}
+	{#{% endif %}#}
 	{% block style %}{% endblock %}
 	<script class="postinit-remove">
 		var config = {
@@ -35,8 +35,8 @@
 	 </script>
     {% endif %}
 </head>
-<body class="bg-lazyload" data-url="/static/img/background.jpg">
-<div class="body-wrap container">
+<body>
+<div class="body-wrap">
 	{% include './navbar.swig' %}
 	{% block body %}{% endblock %}
 </div>
@@ -45,8 +45,10 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/swig/1.4.1/swig.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
 <script>window.swig || document.write('<script src="/static/js/cdnbackup/swig.js"><\/script>')</script>
 <script src="/static/js/lazyload.js"></script>
+<script src="/static/js/countdown.js"></script>
 <script id="init">
 	$(function(){
 		if ($.browser.mobile)
@@ -58,7 +60,7 @@
 		    tagControls: [ '<%', '%>' ]
 		});
 
-		var templs =	$('script[type="text/x-swig-template"]');
+		var templs = $('script[type="text/x-swig-template"]');
 		$.each(templs, function(indx){
 			var templ = $(templs[indx]);
 			var templName = templ.data('name') || templ.attr('id').replace(/-/g, '_');
@@ -66,6 +68,7 @@
 		});
 
 		window.lazyloader.init();
+		window.countdown.bind('.countdown');
 	});
 </script>
 <script class="postinit-remove">
