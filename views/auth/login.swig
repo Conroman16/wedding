@@ -34,15 +34,38 @@
 			<div class="col"></div>
 		</div>
 	</div>
-    {#<br>#}
-    {#<a href="{{ RegisterPath }}">Register</a>#}
 {% endblock %}
 
 {% block scripts %}
 	<script>
 		var loginUrl = '{{ LoginPath }}' + (location.search || '');
+		var errorForm = function(){
+			$('.form-control').addClass('form-control-danger')
+			$('.form-group').addClass('has-danger');
+		};
 		$(function(){
-			$('#login-form').attr('action', loginUrl);
+			$('#login-form')
+				.attr('action', loginUrl)
+				.submit(function(ev){
+					ev.preventDefault();
+					var username = $('.form-control[name="username"]');
+					var password = $('.form-control[name="password"]');
+
+					if (!username.val() || !password.val()) {
+						errorForm();
+						return;
+					}
+
+					$.post(loginUrl, {
+					    username: username.val(),
+						password: password.val()
+					}, function(data){
+						window.location.href = data.redirectUrl || '/';
+					}).catch(function(err){
+					    errorForm();
+					    console.error(err.responseJSON);
+					});
+				});
 		});
 	</script>
 {% endblock %}
