@@ -9,8 +9,16 @@
 	width: 32px;
 }
 
-@media (max-width: 992px) {
-	.topnav {
-		height: 8vh;
+@media (min-width: 375px) {
+	body.mobile{
+		.topnav {
+			height: 13vh;
+		}
 	}
 }
+body.mobile{
+	.topnav {
+		height: 9vh;
+	}
+}
+

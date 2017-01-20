@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
+	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=yes">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<title>{{PageTitle|default('index')|title}}</title>
 	<link rel="shortcut icon" href="/static/img/favicon.ico" type="image/x-icon"/>
 	<link rel="icon" href="/static/img/favicon.ico" type="image/ico"/>
