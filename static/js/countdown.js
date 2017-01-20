@@ -8,7 +8,6 @@ $(function(){
 			var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
 			var days = Math.floor(t / (1000 * 60 * 60 * 24));
 			return {
-				total: t,
 				days: days,
 				hours: hours,
 				minutes: minutes,
@@ -17,8 +16,21 @@ $(function(){
 		},
 
 		getCountdownString: function(){
-			var r = this.getTimeRemaining();
-			return r.days + ' days ' + r.hours + ' hours ' + r.minutes + ' minutes ' + r.seconds + ' seconds';
+			var remaining = this.getTimeRemaining();
+			var retStr = '';
+			var keys = Object.keys(remaining);
+			var add = function(num, label){
+				if (num === 1)
+					label = label.substring(0, label.length - 1);
+				return retStr += ' ' + num + ' ' + label;
+			};
+
+			for (var i = 0; i < keys.length; i++){
+				var key = keys[i];
+				add(remaining[key], key);
+			}
+
+			return retStr;
 		},
 
 		bind: function(el){
