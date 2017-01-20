@@ -17,11 +17,23 @@
 		</div>
 	{% endif %}
 	{% block style %}{% endblock %}
-	<script>var config = {}</script>
+	<script class="postinit-remove">
+		var config = {
+	    	analyticsToken: '{{ GoogleAnalyticsID }}',
+			weddingDate: '{{ EventDate }}',
+		}
+	</script>
 	{% include './client-templates.swig' %}
-    {#{% if IsProd %}#}
-    {# -- ananytics -- #}
-    {#{% endif %}#}
+    {% if IsProd %}
+     <script>
+		 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+				 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		 })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+		 ga('create', config.analyticsToken, 'auto');
+		 ga('send', 'pageview');
+	 </script>
+    {% endif %}
 </head>
 <body class="bg-lazyload" data-url="/static/img/background.jpg">
 <div class="body-wrap container">
@@ -54,6 +66,9 @@
 
 		window.lazyloader.init();
 	});
+</script>
+<script class="postinit-remove">
+	$('.postinit-remove').remove();
 </script>
 {% block scripts %}{% endblock %}
 </body>
