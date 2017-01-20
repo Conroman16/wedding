@@ -15,9 +15,18 @@
 				<a class="nav-link" href="/rsvp">RSVP</a>
 			</li>
 			<li>
-				{% if IsAuthed %}<a class="nav-link" href="{{ LogoutPath }}">Logout</a>{% endif %}
 				{% if IsNotAuthed %}<a class="nav-link" href="{{ LoginPath }}">Login</a>{% endif %}
 			</li>
+			{% if IsAuthed %}
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<a class="dropdown-item" href="/server">Server</a>
+					<a class="dropdown-item" href="/rsvp/all">RSVPs</a>
+					<a class="dropdown-item" href="{{ LogoutPath }}">Logout</a>
+				</div>
+			</li>
+			{% endif %}
 		</ul>
 	</div>
 	<span class="navbar-text countdown invisible"></span>
