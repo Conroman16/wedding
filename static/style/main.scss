@@ -2,6 +2,7 @@
 @import 'fonts.scss';
 @import 'mixins';
 @import 'navbar';
+@import 'form';
 
 *{
 	margin: 0;
@@ -12,6 +13,10 @@
   content: " ";
   display: block;
   clear: both;
+}
+
+.pull-right{
+	float: right;
 }
 
 .center{
