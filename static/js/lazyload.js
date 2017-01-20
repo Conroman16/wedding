@@ -13,7 +13,8 @@
 
 				var styleEl = document.createElement('style'),
 					img = new Image(),
-					cssText = window.templates.llImgTransition({ imgUrl: fsUrl });
+					cssText = window.templates.llImgTransition({ imgUrl: fsUrl }),
+					blur = $img.data('blur');
 
 				if (styleEl.styleSheet)
 					styleEl.styleSheet.cssText = cssText;
@@ -22,7 +23,18 @@
 				head.appendChild(styleEl);
 
 				img.onload = function(){
-					$img.css('background-image', 'url(' + fsUrl + ')');
+					var u = fsUrl;
+					// if (blur){
+					// 	var canvas = document.getElementById('sb-worker');
+					// 	StackBlur.image(img, canvas, '20px');
+                    //
+					// 	setTimeout(function(){
+					// 		u = canvas.toDataURL();
+					// 		$img.css('background-image', 'url(' + u + ')');
+					// 	}, 10000);
+					// }
+					// else
+						$img.css('background-image', 'url(' + u + ')');
 					$img.addClass('ll-loaded');
 				};
 				img.src = fsUrl;
