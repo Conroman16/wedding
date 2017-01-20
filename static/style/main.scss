@@ -1,12 +1,11 @@
 @import 'variables';
 @import 'fonts.scss';
 @import 'mixins';
-@import 'simplegrid';
-@import 'list';
+@import 'navbar';
 
 *{
-  margin: 0;
-  padding: 0;
+	margin: 0;
+	padding: 0;
 }
 
 .clearfix:after {
@@ -35,33 +34,53 @@ table{
 	border-collapse: collapse;
 }
 
-.body-wrap{
-	margin-top: 6vh;
+.container{
+	width: 70%;
 }
 
-$bigBackgroundImgUrl: '/static/img/background.jpg';
-$littleBackgroundImgUrl: 'data:image/png;base64,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';
 .countdown{
 	width: 30em;
 	text-align: right;
 	@include fade-in();
 }
 
-body {
-	color: #efefef;
-	overflow: hidden;
-	display: -webkit-flex;
-	display: -ms-flexbox;
-	display: flex;
+.banner-text{
+	margin: auto;
 	width: 100%;
-	height: 54.5vw;
-	margin: 0 auto;
-	background-color: #567DA7;
-	background-size: cover;
-	background-position: center 12%;
-	background-image: url($littleBackgroundImgUrl);
 }
 
+.banner-text > h1 {
+	padding-top: 240px;
+	font-size: 100px;
+	font-weight: bold;
+	font-style: normal;
+	font-stretch: normal;
+	text-align: center;
+}
+.banner-text > h2 {
+	font-size: 16px;
+	font-weight: bold;
+	font-style: normal;
+	font-stretch: normal;
+	letter-spacing: 2.7px;
+	text-align: center;
+	color: #ddd;
+}
+.header-bg {
+	position: relative;
+	margin:auto;
+	width: 100%;
+	height: 658px;
+	background-size: cover;
+	background-image: url($littleBackgroundImgUrl);
+	color: #fff;
+}
+
+body {
+	width: 100%;
+}
+
+// Right now this only works for iOS :/
 @supports (background-image: filter(url('i.jpg'), blur(1px))) {
 	.bg-lazyload {
 		transform: translateZ(0);
@@ -69,16 +88,6 @@ body {
 	.bg-lazyload.loaded {
 		animation: sharpen .5s both;
 	}
-	//@keyframes sharpen {
-	//	from {
-	//		background-image: -webkit-filter(url($bigBackgroundImgUrl), blur(20px));
-	//		background-image: filter(url($bigBackgroundImgUrl), blur(20px));
-	//	}
-	//	to {
-	//		background-image: -webkit-filter(url($bigBackgroundImgUrl), blur(0px));
-	//		background-image: filter(url($bigBackgroundImgUrl), blur(0px));
-	//	}
-	//}
 }
 
 // UI helpers
