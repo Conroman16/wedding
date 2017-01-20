@@ -55,7 +55,7 @@ module.exports = () => {
 		db.Rsvp.findAll()
 			.then((rsvps) => {
 				rsvps = _.map(rsvps, (rsvp) => {
-					rsvp.dataValues = _.omit(rsvp.dataValues, (value, key) => key === 'updatedAt');
+					rsvp.dataValues = _.omit(rsvp.dataValues, (value, key) => key === 'updatedAt' || key === 'id');
 					return rsvp;
 				});
 				let columns = _.map(_.first(rsvps).dataValues, (value, key) => {
