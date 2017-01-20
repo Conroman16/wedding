@@ -9,7 +9,7 @@ module.exports = () => {
 	router.get('/logout', (req, res) => {
 		if (req.isAuthenticated())
 			req.logout();
-		res.redirect(config.loginPath);
+		res.redirect('/');
 	});
 
 	router.get('/login', (req, res) => {
