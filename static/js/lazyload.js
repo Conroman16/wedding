@@ -6,8 +6,12 @@
 			var llImgs = $('.bg-lazyload');
 			$.each(llImgs, function(indx){
 				var $img = $(llImgs[indx]),
-					fsUrl = $img.data('url'),
-					styleEl = document.createElement('style'),
+					fsUrl = $img.data('url');
+
+				if (!fsUrl)
+					return;
+
+				var styleEl = document.createElement('style'),
 					img = new Image(),
 					cssText = window.templates.llImgTransition({ imgUrl: fsUrl });
 
