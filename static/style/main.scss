@@ -39,6 +39,49 @@ table{
 	border-collapse: collapse;
 }
 
+.navbar{
+	z-index: 10;
+	@include drop-shadow();
+}
+.navbar-collapse{
+	z-index: 11;
+	background-color: #fff;
+	//@include drop-shadow();
+}
+
+.navbar-brand{
+	z-index: 100;
+	padding-bottom: 0.3em;
+}
+
+.navbar-toggler{
+	z-index: 500;
+}
+
+body.mobile{
+	overflow-x: hidden;
+
+	.container{
+		width: 100%;
+	}
+
+	.countdown{
+		display: none;
+	}
+
+	.navbar-collapse{
+		width: 112%;
+		margin-left: -1em;
+		padding-left: 1em;
+		margin-top: -0.5em;
+		padding-top: 0.5em;
+
+		&.collapse.show{
+			padding-bottom: 0.3em;
+		}
+	}
+}
+
 .container{
 	width: 70%;
 }
@@ -79,6 +122,7 @@ table{
 	background-size: cover;
 	background-image: url($littleBackgroundImgUrl);
 	color: #fff;
+
 }
 
 body {
