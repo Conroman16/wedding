@@ -22,3 +22,8 @@
   -moz-box-shadow: $x $y $blur $spread rgba(0, 0, 0, $alpha);
   box-shadow: $x $y $blur $spread rgba(0, 0, 0, $alpha);
 }
+@mixin blur ($radius: 8px) {
+	-webkit-filter: blur($radius);
+	-ms-filter: blur($radius);
+	filter: blur($radius);
+}
