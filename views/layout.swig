@@ -36,6 +36,7 @@
     {% endif %}
 </head>
 <body>
+<canvas id="sb-worker" class="hide"></canvas>
 <div class="body-wrap">
 	{% include './navbar.swig' %}
 	{% block body %}{% endblock %}
@@ -49,6 +50,7 @@
 <script>window.swig || document.write('<script src="/static/js/cdnbackup/swig.js"><\/script>')</script>
 <script src="/static/js/lazyload.js"></script>
 <script src="/static/js/countdown.js"></script>
+{#<script src="/static/js/stackblur.js"></script>#}
 <script id="init">
 	$(function(){
 		if ($.browser.mobile)
