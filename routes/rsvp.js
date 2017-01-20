@@ -52,16 +52,14 @@ module.exports = () => {
 	});
 
 	router.get('/export', (req, res) => {
-		console.log(db.Rsvp.$modelOptions);
-
 		db.Rsvp.findAll()
 			.then((rsvps) => {
 				rsvps = _.map(rsvps, (rsvp) => {
-					rsvp.dataValues = _.reject(rsvp.dataValues, (value, key) => key === 'updatedAt');
+					rsvp.dataValues = _.omit(rsvp.dataValues, (value, key) => key === 'updatedAt');
 					return rsvp;
 				});
 				let columns = _.map(_.first(rsvps).dataValues, (value, key) => {
-					let ret = { caption: key };
+					let ret = { caption: key.capitalize() };
 					let type = 'string';
 					if (_.isNumber(value))
 						type = 'number';

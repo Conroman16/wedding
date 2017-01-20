@@ -7,6 +7,7 @@ if (!process.env.NODE_ENV){
 
 console.log(`${process.env.NODE_ENV.toUpperCase()} MODE`);
 
+require('./lib/extensions');  // Configure extensions
 let db = require('./db'),
 	server = require('./lib/server'),
 	events = require('./lib/events'),
