@@ -1,0 +1,13 @@
+.form{
+	@include drop-shadow();
+	border: 1px solid rgba(0,0,0,0.05);
+	padding: 1em 2em;
+
+	input:not([type="radio"]){
+		margin: 1em 0;
+	}
+
+	.submit-wrap{
+		height: 4.2em;
+	}
+}
