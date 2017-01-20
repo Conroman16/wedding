@@ -1,7 +1,7 @@
 {% extends '../layout.swig' %}
 
 {% block body %}
-	{#<div class="header-bg bg-lazyload" data-url="/static/img/background.jpg">#}
+	{#<div class="header-bg bg-lazyload" data-url="/static/img/background.jpg" data-blur="true">#}
 	<div class="header-bg">
 		<div class="container">
 			<div class="row align-items-center">
