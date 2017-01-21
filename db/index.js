@@ -2,7 +2,7 @@ let fs = require('fs');
 let path = require('path');
 let Sequelize = require('sequelize');
 let appConfig = require('../lib/config');
-let dbConfig = require('./config.json');
+let dbConfig = require('./config');
 let config = {};
 let db = {};
 
