@@ -17,7 +17,30 @@
     <br>
 	<div class="container">
 		<div class="row">
-			<div class="col">
+			<div class="col-3 left-col">
+				<div class="h4">A title</div>
+			</div>
+			<div class="col right-col">
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam in massa id enim feugiat elementum. Ut accumsan neque finibus consequat ultricies. Donec a libero neque. Cras fringilla tortor ut semper bibendum. Maecenas malesuada velit a tempor porttitor. Sed vitae scelerisque arcu. Phasellus sed cursus mauris. Vivamus molestie lobortis lectus, id euismod augue sollicitudin vitae. In lobortis et enim vitae efficitur. Nullam interdum, nunc non bibendum eleifend, magna urna dapibus leo, nec euismod orci est a tellus. In quis sodales urna. Aliquam condimentum bibendum metus nec tempor. Ut eleifend ipsum nisl, eget porta ligula vehicula vel. Vestibulum sollicitudin ullamcorper nunc, feugiat accumsan orci dapibus id. Phasellus aliquet eget dui eu faucibus. Suspendisse urna eros, tristique ultrices augue ac, blandit facilisis magna.
+				</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-3 left-col">
+				<div class="h4">Another title</div>
+			</div>
+			<div class="col right-col">
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam in massa id enim feugiat elementum. Ut accumsan neque finibus consequat ultricies. Donec a libero neque. Cras fringilla tortor ut semper bibendum. Maecenas malesuada velit a tempor porttitor. Sed vitae scelerisque arcu. Phasellus sed cursus mauris. Vivamus molestie lobortis lectus, id euismod augue sollicitudin vitae. In lobortis et enim vitae efficitur. Nullam interdum, nunc non bibendum eleifend, magna urna dapibus leo, nec euismod orci est a tellus. In quis sodales urna. Aliquam condimentum bibendum metus nec tempor. Ut eleifend ipsum nisl, eget porta ligula vehicula vel. Vestibulum sollicitudin ullamcorper nunc, feugiat accumsan orci dapibus id. Phasellus aliquet eget dui eu faucibus. Suspendisse urna eros, tristique ultrices augue ac, blandit facilisis magna.
+				</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-3 left-col">
+				<div class="h4">A third title</div>
+			</div>
+			<div class="col right-col">
 				<p>
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam in massa id enim feugiat elementum. Ut accumsan neque finibus consequat ultricies. Donec a libero neque. Cras fringilla tortor ut semper bibendum. Maecenas malesuada velit a tempor porttitor. Sed vitae scelerisque arcu. Phasellus sed cursus mauris. Vivamus molestie lobortis lectus, id euismod augue sollicitudin vitae. In lobortis et enim vitae efficitur. Nullam interdum, nunc non bibendum eleifend, magna urna dapibus leo, nec euismod orci est a tellus. In quis sodales urna. Aliquam condimentum bibendum metus nec tempor. Ut eleifend ipsum nisl, eget porta ligula vehicula vel. Vestibulum sollicitudin ullamcorper nunc, feugiat accumsan orci dapibus id. Phasellus aliquet eget dui eu faucibus. Suspendisse urna eros, tristique ultrices augue ac, blandit facilisis magna.
 				</p>
