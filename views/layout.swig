@@ -9,14 +9,14 @@
 	<link rel="icon" href="/static/img/favicon.ico" type="image/ico"/>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 	<link rel="stylesheet" href="/static/css/main.css" />
-	{#{% if IsDev %}#}
-		{#<link rel="stylesheet" href="/static/css/devdata.css" />#}
-		{#<div id="dev-data-banner-wrap" class="clearfix">#}
-			{#<div class="dev-data-banner">#}
-				{#<p class="dev-data-banner-text">Dev Data</p>#}
-			{#</div>#}
-		{#</div>#}
-	{#{% endif %}#}
+	{% if IsDev %}
+		<link rel="stylesheet" href="/static/css/devdata.css" />
+		<div id="dev-data-banner-wrap" class="clearfix">
+			<div class="dev-data-banner">
+				<p class="dev-data-banner-text">Dev Data</p>
+			</div>
+		</div>
+	{% endif %}
 	{% block style %}{% endblock %}
 	<script class="postinit-remove">
 		var config = {
