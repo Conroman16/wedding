@@ -37,7 +37,7 @@
     {% endif %}
 </head>
 <body>
-<canvas id="sb-worker" class="hide"></canvas>
+{#<canvas id="sb-worker" class="hide"></canvas>#}
 {% include './navbar.swig' %}
 <div class="body-wrap">
 	{% block body %}{% endblock %}
