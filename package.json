@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/Conroman16/wedding#readme",
   "dependencies": {
+    "async": "^2.1.4",
     "bcrypt": "^1.0.1",
     "body-parser": "^1.15.2",
     "connect-redis": "^3.2.0",
