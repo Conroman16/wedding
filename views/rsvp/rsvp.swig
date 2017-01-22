@@ -2,10 +2,11 @@
 
 {% block body %}
 	<div class="container">
+		<br><br>
 		<div class="row">
 			<div class="col"></div>
 			<div class="col-4">
-				<form class="form">
+				<form class="form rsvp-form">
 					<input type="hidden" class="form-control input" name="token" value="{{ token }}" />
 
 					<input type="text" class="form-control input" name="name" placeholder="NAME" aria-label="Name" required />
