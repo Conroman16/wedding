@@ -10,12 +10,10 @@ console.log(`${process.env.NODE_ENV.toUpperCase()} MODE`);
 require('./lib/extensions');  // Configure extensions
 let db = require('./db'),
 	server = require('./lib/server'),
-	events = require('./lib/events'),
-	tasks = require('./lib/tasks');
+	events = require('./lib/events');
 
 events.init();
 
 db.sequelize.sync().then(() => {
 	server.start();
-	tasks.init();
 });

@@ -1,6 +1,7 @@
 @import 'variables';
-@import 'fonts.scss';
+@import 'fonts';
 @import 'mixins';
+@import 'loader';
 @import 'navbar';
 @import 'form';
 
@@ -38,10 +39,6 @@
 table{
 	border-collapse: collapse;
 }
-
-//.body-wrap{
-//	margin-top: 5vh;
-//}
 
 .left-col{
 	text-align: center;
