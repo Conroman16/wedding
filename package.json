@@ -39,6 +39,7 @@
     "redis": "^2.6.3",
     "sequelize": "^3.28.0",
     "swig-templates": "^2.0.2",
+    "twilio": "^2.11.1",
     "underscore": "^1.8.3"
   }
 }
