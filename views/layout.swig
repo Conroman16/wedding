@@ -8,6 +8,7 @@
 	<link rel="shortcut icon" href="/static/img/favicon.ico" type="image/x-icon"/>
 	<link rel="icon" href="/static/img/favicon.ico" type="image/ico"/>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" />
 	<link rel="stylesheet" href="/static/css/main.css" />
 	{% if IsDev %}
 		<link rel="stylesheet" href="/static/css/devdata.css" />
@@ -19,12 +20,13 @@
 	{% endif %}
 	{% block style %}{% endblock %}
 	<script class="postinit-remove">
-		var config = {
+		window.config = {
 	    	analyticsToken: '{{ GoogleAnalyticsID }}',
 			weddingDate: '{{ EventDate }}',
+			adminEmail: '{{ AdminEmail }}'
 		}
 	</script>
-	{% include './client-templates.swig' %}
+	{% include 'templates/client-templates.swig' %}
     {% if IsProd %}
      <script>
 		 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -33,12 +35,13 @@
 		 })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 		 ga('create', config.analyticsToken, 'auto');
 		 ga('send', 'pageview');
+		 window.config.analyticsLoaded = true;
 	 </script>
     {% endif %}
 </head>
 <body>
-<canvas id="sb-worker" class="hide"></canvas>
-{% include './navbar.swig' %}
+{#<canvas id="sb-worker" class="hide"></canvas>#}
+{% include 'partials/navbar.swig' %}
 <div class="body-wrap">
 	{% block body %}{% endblock %}
 </div>
@@ -46,8 +49,10 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-browser/0.1.0/jquery.browser.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/swig/1.4.1/swig.min.js"></script>
 <script>window.swig || document.write('<script src="/static/js/cdnbackup/swig.js"><\/script>')</script>
+<script src="/static/js/loader.js"></script>
 <script src="/static/js/lazyload.js"></script>
 <script src="/static/js/countdown.js"></script>
 {#<script src="/static/js/stackblur.js"></script>#}
