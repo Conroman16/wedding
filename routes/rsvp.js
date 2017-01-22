@@ -4,6 +4,7 @@ let email = require('../lib/email');
 let db = require('../db');
 let excel = require('../lib/excel');
 let _ = require('underscore');
+let config = require('../lib/config');
 
 module.exports = () => {
 
@@ -24,7 +25,7 @@ module.exports = () => {
 				if (!valid)
 					return res.sendStatus(500);
 
-				email.sendEmail('***REMOVED***', 'RSVP Posted', { title: 'RSVP Posted', data: JSON.stringify(req.body) })
+				email.sendEmail(config.adminEmail, 'RSVP Posted', { title: 'RSVP Posted', data: JSON.stringify(req.body) })
 					.catch((err) => console.error('EMAIL ERROR', err))
 					.then((response) => res.sendStatus(200));
 
