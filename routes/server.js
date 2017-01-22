@@ -7,6 +7,10 @@ let _ = require('underscore');
 module.exports = () => {
 
 	router.get('/', (req, res) => {
+		res.render('server/about');
+	});
+
+	router.get('/data', (req, res) => {
 		pm2.describe(config.appName, (err, description) => {
 			if (err)
 				return res.status(500).send(err);
@@ -31,7 +35,7 @@ module.exports = () => {
 					unstableRestarts: desc.pm2_env.unstable_restarts
 				};
 			});
-			res.render('server/about', { items: items, nodes: nodes });
+			res.send({ items: items, nodes: nodes });
 		});
 	});
 
