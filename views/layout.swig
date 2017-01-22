@@ -24,7 +24,7 @@
 			weddingDate: '{{ EventDate }}',
 		}
 	</script>
-	{% include './client-templates.swig' %}
+	{% include 'templates/client-templates.swig' %}
     {% if IsProd %}
      <script>
 		 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -33,12 +33,13 @@
 		 })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 		 ga('create', config.analyticsToken, 'auto');
 		 ga('send', 'pageview');
+		 window.config.analyticsLoaded = true;
 	 </script>
     {% endif %}
 </head>
 <body>
 {#<canvas id="sb-worker" class="hide"></canvas>#}
-{% include './navbar.swig' %}
+{% include 'partials/navbar.swig' %}
 <div class="body-wrap">
 	{% block body %}{% endblock %}
 </div>
