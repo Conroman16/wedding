@@ -9,6 +9,12 @@
 	width: 32px;
 }
 
+.countdown-wrap{
+	width: 30em;
+	text-align: right;
+	@include fade-in();
+}
+
 @media (min-width: 375px) {
 	body.mobile{
 		.topnav {
@@ -16,9 +22,26 @@
 		}
 	}
 }
+
 body.mobile{
+
 	.topnav {
 		height: 9vh;
 	}
-}
 
+	.countdown-wrap{
+		display: none;
+	}
+
+	.navbar-collapse{
+		width: 112%;
+		margin-left: -1em;
+		padding-left: 1em;
+		margin-top: -0.5em;
+		padding-top: 0.5em;
+
+		&.collapse.show{
+			padding-bottom: 0.3em;
+		}
+	}
+}

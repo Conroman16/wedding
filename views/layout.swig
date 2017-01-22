@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=yes">
 	<meta name="apple-mobile-web-app-capable" content="yes" />
-	<title>{{PageTitle|default('index')|title}}</title>
+	<title>{{PageTitle|default('#KTTT17')|title}}</title>
 	<link rel="shortcut icon" href="/static/img/favicon.ico" type="image/x-icon"/>
 	<link rel="icon" href="/static/img/favicon.ico" type="image/ico"/>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
