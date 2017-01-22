@@ -9,7 +9,7 @@
 					<input type="hidden" class="form-control input" name="token" value="{{ token }}" />
 
 					<input type="text" class="form-control input" name="name" placeholder="NAME" aria-label="Name" required />
-					<input type="text" class="form-control input" name="email" placeholder="EMAIL" aria-label="Email address" match=".+@.+\..+" />
+					<input type="text" class="form-control input" name="email" placeholder="EMAIL" aria-label="Email address" match=".+@.+\..+" required />
 					<input type="tel" class="form-control input" name="phone" placeholder="PHONE" aria-label="Phone number" minlength="10" />
 
 					<fieldset class="form-group">
@@ -28,7 +28,7 @@
 						</div>
 					</fieldset>
 
-					<input type="text" class="form-control input" name="attendees" placeholder="ATTENDEES" aria-label="Name" />
+					<input type="text" class="form-control input" name="attendees" placeholder="EXTRA GUESTS" aria-label="Name" />
 					<textarea class="form-control input multiline" name="message" placeholder="MESSAGE" aria-label="Message"></textarea>
 
 					<div class="submit-wrap">

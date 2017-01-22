@@ -5,6 +5,7 @@ let db = require('../db');
 let excel = require('../lib/excel');
 let _ = require('underscore');
 let config = require('../lib/config');
+let async = require('async');
 
 module.exports = () => {
 
@@ -17,27 +18,60 @@ module.exports = () => {
 	router.post('/', (req, res) => {
 		if (!req.body.token)
 			return res.status(500).send({ error: 'Invalid form token' });
-		else if (!req.body.name || !req.body.attending || !req.body.attendees)
-			return res.status(500).send({ error: 'Invalid value for name, attending, or attendees' });
+		else if (!req.body.name || !req.body.attending)
+			return res.status(500).send({ error: 'Invalid value for name or attending' });
 
 		auth.verifyFormToken(req.body.token)
 			.then((valid) => {
 				if (!valid)
 					return res.sendStatus(500);
 
-				email.sendEmail(config.adminEmail, 'RSVP Posted', { title: 'RSVP Posted', data: JSON.stringify(req.body) })
-					.catch((err) => console.error('EMAIL ERROR', err))
-					.then((response) => res.sendStatus(200));
+				let isAttending = JSON.parse(req.body.attending);
+				let attendees = JSON.parse(req.body.attendees || '0');
+				if (isAttending)
+					attendees++;
 
-				db.Rsvp.create({
-					name: req.body.name,
-					email: req.body.email,
-					phone: req.body.phone,
-					message: req.body.message,
-					isAttending: req.body.attending,
-					attendees: req.body.attendees
-				}).then((newRsvp) => res.send(newRsvp))
-				.catch((err) => res.status(500).send(err));
+				async.series([
+					(next) => {
+						db.Rsvp.create({
+							name: req.body.name,
+							email: req.body.email,
+							phone: req.body.phone,
+							message: req.body.message,
+							isAttending: isAttending,
+							attendees: attendees
+						})
+							.then((newRsvp) => next(null, newRsvp))
+							.catch((err) => next(err));
+					},
+					(next) => {
+						email.sendEmail(config.adminEmail, 'RSVP Posted', { title: 'RSVP Posted', data: JSON.stringify(req.body) })
+							.then((response) => next(null, response))
+							.catch((err) => {
+								console.error('Unable to send RSVP post notification email', err);
+								next(err);
+							});
+					},
+					(next) => {
+						email.sendEmail(req.body.email, 'RSVP Confirmation', {
+							Attending: isAttending,
+							NotAttending: !isAttending,
+							AttendingAlone: attendees === 1,
+							NotAttendingAlone: attendees > 1,
+							MoreThanOneExtraGuest: attendees > 2,
+							Attendees: attendees - 1,
+						}, email.templates.rsvpConfirmation)
+							.then((response) => next(null, response))
+							.catch((err) => {
+								console.error('Unable to send RSVP confirmation email', err);
+								next(err);
+							});
+					}
+				], (err, results) => {
+					if (err)
+						return res.status(500).send(err);
+					return res.sendStatus(200);
+				});
 			})
 			.catch((err) => res.status(500).send(err));
 	});

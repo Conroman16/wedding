@@ -72,26 +72,37 @@ function submitForm(){
 	var $name = $('.input[name="name"]');
 	var $email = $('.input[name="email"]');
 	var $phone = $('.input[name="phone"]');
-	var $attending = $('.input[name="attending"]');
+	var $attending = $('.input[name="attending"]:checked');
 	var $attendees = $('.input[name="attendees"]');
 	var $token = $('.input[name="token"]');
 	var $message = $('.input[name="message"]');
 	var url = location.pathname;
 
 	if (validateForm()){
-		$.post(url, {
+		var postData = {
 			name: $name.val(),
 			email: $email.val(),
 			phone: $phone.val(),
 			token: $token.val(),
-			attending: !!$attending.val(),
+			attending: !!JSON.parse($attending.val()),
 			attendees: $attendees.val(),
 			message: $message.val()
-		}).done(function(data){
-			clearForm();
-			if (config.gaLoaded)
+		};
+		$.post(url, postData).done(function(data){
+			swal({
+				title: 'Thank you!',
+				text: 'Your RSVP was submitted successfully.  You should receive a confirmation email shortly.',
+				type: 'success'
+			});
+			if (config.analyticsLoaded)
 				ga('send', 'pageview', url);
 		}).fail(function(xhr, status, err){
+			swal({
+				title: 'Ah man!',
+				text: 'There was an error submitting your rsvp 😭.  You should tell us about it at <a href="mailto:' + config.adminEmail + '.">' + config.adminEmail + '</a>',
+				type: 'error',
+				html: true
+			});
 			console.error('Error submitting rsvp', err);
 		}).always(function(){
 			clearForm();
