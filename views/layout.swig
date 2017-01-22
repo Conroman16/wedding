@@ -8,6 +8,7 @@
 	<link rel="shortcut icon" href="/static/img/favicon.ico" type="image/x-icon"/>
 	<link rel="icon" href="/static/img/favicon.ico" type="image/ico"/>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" />
 	<link rel="stylesheet" href="/static/css/main.css" />
 	{% if IsDev %}
 		<link rel="stylesheet" href="/static/css/devdata.css" />
@@ -19,9 +20,10 @@
 	{% endif %}
 	{% block style %}{% endblock %}
 	<script class="postinit-remove">
-		var config = {
+		window.config = {
 	    	analyticsToken: '{{ GoogleAnalyticsID }}',
 			weddingDate: '{{ EventDate }}',
+			adminEmail: '{{ AdminEmail }}'
 		}
 	</script>
 	{% include 'templates/client-templates.swig' %}
@@ -47,6 +49,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-browser/0.1.0/jquery.browser.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/swig/1.4.1/swig.min.js"></script>
 <script>window.swig || document.write('<script src="/static/js/cdnbackup/swig.js"><\/script>')</script>
 <script src="/static/js/lazyload.js"></script>
