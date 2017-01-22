@@ -38,7 +38,7 @@ module.exports = () => {
 				}).then((newRsvp) => res.send(newRsvp))
 				.catch((err) => res.status(500).send(err));
 			})
-			.catch((err) => res.status(500).send({ error: err }));
+			.catch((err) => res.status(500).send(err));
 	});
 
 	router.get('/all', (req, res) => {
