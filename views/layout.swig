@@ -40,7 +40,6 @@
     {% endif %}
 </head>
 <body>
-{#<canvas id="sb-worker" class="hide"></canvas>#}
 {% include 'partials/navbar.swig' %}
 <div class="body-wrap">
 	{% block body %}{% endblock %}
@@ -55,7 +54,6 @@
 <script src="/static/js/loader.js"></script>
 <script src="/static/js/lazyload.js"></script>
 <script src="/static/js/countdown.js"></script>
-{#<script src="/static/js/stackblur.js"></script>#}
 <script id="init">
 	$(function(){
 		if ($.browser.mobile)
