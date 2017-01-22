@@ -21,10 +21,15 @@ $(function(){
     loader.showLoading();
     $.get('/server/data')
 		.done(function(data){
-		    console.log('DATA', data);
 		    $('.server-page').html(templates.serverPage(data));
 		})
-		.fail()
+		.fail(function(){
+		    swal({
+		        type: 'error',
+				title: 'Error',
+				text: 'There was an error loading the server page'
+			});
+		})
 		.always(function(){
 		    loader.hideLoading();
 		});
