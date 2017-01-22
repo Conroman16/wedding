@@ -12,3 +12,7 @@
 		}
 	}
 </script>
+
+<script id="loader-template" data-name="loader" type="text/x-swig-template">
+{% include '../partials/loader.swig' %}
+</script>
