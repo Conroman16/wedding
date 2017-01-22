@@ -1,0 +1,56 @@
+$loader-size: 100px;
+
+@keyframes rotate {
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+.loading-overlay{
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 99999999999;
+	background-color: rgba(255, 255, 255, 0.7);
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	@include fade-in();
+
+	&.loader-hidden{
+		opacity: 0;
+	}
+
+	.loader-wrap{
+		width: $loader-size;
+		height: $loader-size;
+		margin: 10vh auto auto;
+
+		.loader-animation {
+			&__ring {
+				position: absolute;
+				width: $loader-size;
+				height: $loader-size;
+
+				&:first-child {
+					transform: skew(30deg, 20deg);
+				}
+
+				&:last-child {
+					transform: skew(-30deg, -20deg) scale(-1, 1);
+
+					svg {
+						animation-delay: -0.5s;
+					}
+				}
+
+				svg {
+					animation: rotate 1s linear infinite;
+					fill: rgba(0, 0, 0, 0.2);
+				}
+			}
+		}
+	}
+}
+
+

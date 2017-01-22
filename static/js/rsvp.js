@@ -88,6 +88,7 @@ function submitForm(){
 			attendees: $attendees.val(),
 			message: $message.val()
 		};
+		loader.showLoading('.rsvp-form');
 		$.post(url, postData).done(function(data){
 			swal({
 				title: 'Thank you!',
@@ -106,6 +107,7 @@ function submitForm(){
 			console.error('Error submitting rsvp', err);
 		}).always(function(){
 			clearForm();
+			loader.hideLoading();
 		});
 	}
 }

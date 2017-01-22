@@ -52,6 +52,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/swig/1.4.1/swig.min.js"></script>
 <script>window.swig || document.write('<script src="/static/js/cdnbackup/swig.js"><\/script>')</script>
+<script src="/static/js/loader.js"></script>
 <script src="/static/js/lazyload.js"></script>
 <script src="/static/js/countdown.js"></script>
 {#<script src="/static/js/stackblur.js"></script>#}
