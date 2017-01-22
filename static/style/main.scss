@@ -46,22 +46,22 @@ table{
 }
 
 .navbar{
-	z-index: 10;
+	z-index: 1100;
 	@include drop-shadow();
 }
 .navbar-collapse{
-	z-index: 11;
+	z-index: 1200;
 	background-color: #fff;
 	//@include drop-shadow();
 }
 
 .navbar-brand{
-	z-index: 100;
+	z-index: 1300;
 	padding-bottom: 0.3em;
 }
 
 .navbar-toggler{
-	z-index: 500;
+	z-index: 1400;
 }
 
 body.mobile{
