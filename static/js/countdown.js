@@ -38,7 +38,7 @@ $(function(){
 				$el = $(el);
 			setInterval(function(){
 				$el.text(self.getCountdownString());
-				$el.removeClass('invisible');
+				$el.closest('.invisible').removeClass('invisible');
 			}, 1000);
 		}
 	};

@@ -5,8 +5,12 @@
 	td{
 		padding: 0.5em 1em
 	}
-	table, tr, td{
+	.host-row table, .host-row tr, .host-row td{
 		border: 1px solid;
+	}
+
+	tr:not(:first-of-type){
+		border-top: 1px solid rgba(0,0,0,0.3);
 	}
 </style>
 {% endblock %}
@@ -21,10 +25,15 @@ $(function(){
     loader.showLoading();
     $.get('/server/data')
 		.done(function(data){
-		    console.log('DATA', data);
 		    $('.server-page').html(templates.serverPage(data));
 		})
-		.fail()
+		.fail(function(){
+		    swal({
+		        type: 'error',
+				title: 'Error',
+				text: 'There was an error loading the server page'
+			});
+		})
 		.always(function(){
 		    loader.hideLoading();
 		});

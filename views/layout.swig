@@ -4,9 +4,9 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=yes">
 	<meta name="apple-mobile-web-app-capable" content="yes" />
-	<title>{{PageTitle|default('index')|title}}</title>
-	<link rel="shortcut icon" href="/static/img/favicon.ico" type="image/x-icon"/>
-	<link rel="icon" href="/static/img/favicon.ico" type="image/ico"/>
+	<title>{{PageTitle|default('#KTTT17')}}</title>
+	<link rel="shortcut icon" href="/static/img/favicon.ico" type="image/x-icon" />
+	<link rel="icon" href="/static/img/favicon.ico" type="image/ico" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" />
 	<link rel="stylesheet" href="/static/css/main.css" />
@@ -40,7 +40,6 @@
     {% endif %}
 </head>
 <body>
-{#<canvas id="sb-worker" class="hide"></canvas>#}
 {% include 'partials/navbar.swig' %}
 <div class="body-wrap">
 	{% block body %}{% endblock %}
@@ -51,11 +50,10 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/swig/1.4.1/swig.min.js"></script>
-<script>window.swig || document.write('<script src="/static/js/cdnbackup/swig.js"><\/script>')</script>
+<script>window.swig || document.write('<script src="/static/cdnbackup/swig.js"><\/script>')</script>
 <script src="/static/js/loader.js"></script>
 <script src="/static/js/lazyload.js"></script>
 <script src="/static/js/countdown.js"></script>
-{#<script src="/static/js/stackblur.js"></script>#}
 <script id="init">
 	$(function(){
 		if ($.browser.mobile)
