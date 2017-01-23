@@ -40,6 +40,10 @@ table{
 	border-collapse: collapse;
 }
 
+.smaller{
+	zoom: 0.9;
+}
+
 .left-col{
 	text-align: center;
 	transform: translateY(calc(50% - 1.35em));
@@ -70,32 +74,10 @@ body.mobile{
 	.container{
 		width: 100%;
 	}
-
-	.countdown{
-		display: none;
-	}
-
-	.navbar-collapse{
-		width: 112%;
-		margin-left: -1em;
-		padding-left: 1em;
-		margin-top: -0.5em;
-		padding-top: 0.5em;
-
-		&.collapse.show{
-			padding-bottom: 0.3em;
-		}
-	}
 }
 
 .container{
 	width: 70%;
-}
-
-.countdown{
-	width: 30em;
-	text-align: right;
-	@include fade-in();
 }
 
 .banner-text{
