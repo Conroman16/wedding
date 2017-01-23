@@ -35,6 +35,13 @@ $(function(){
 		else
 			$attendeesGroup.addClass('hide');
 	});
+
+	$('.message-toggle').change(function(){
+		if ($('.message-toggle').is(':checked'))
+			$('.message-group').removeClass('hide');
+		else
+			$('.message-group').addClass('hide');
+	});
 });
 
 function removeValidation($input){
@@ -46,6 +53,7 @@ function clearForm(){
 	$('.input[type="text"], .input[type="tel"], textarea.input').val('');
 	$('.input[type="radio"].default, .input[type="check"].default').prop('checked', true);
 	$('.attendees-group').addClass('hide');
+	$('.message-group').addClass('hide');
 }
 
 function getValue($i){
@@ -111,6 +119,8 @@ function validateForm(){
 }
 
 function submitForm(){
+	loader.showLoading('.rsvp-form');
+
 	var $name = $('.input[name="name"]');
 	var $email = $('.input[name="email"]');
 	var $phone = $('.input[name="phone"]');
@@ -130,12 +140,13 @@ function submitForm(){
 			attendees: $attendees.val(),
 			message: $message.val()
 		};
-		loader.showLoading('.rsvp-form');
 		$.post(url, postData).done(function(data){
 			swal({
 				title: 'Thank you!',
 				text: 'Your RSVP was submitted successfully.  You should receive a confirmation email shortly.',
 				type: 'success'
+			}, function(){
+				window.location.href = '/';
 			});
 			if (config.analyticsLoaded)
 				ga('send', 'pageview', url);
@@ -145,6 +156,8 @@ function submitForm(){
 				text: 'There was an error submitting your rsvp 😭.  You should tell us about it at <a href="mailto:' + config.adminEmail + '.">' + config.adminEmail + '</a>',
 				type: 'error',
 				html: true
+			}, function(){
+				window.location.reload();
 			});
 			console.error('Error submitting rsvp', err);
 		}).always(function(){
@@ -152,4 +165,6 @@ function submitForm(){
 			loader.hideLoading();
 		});
 	}
+	else
+		loader.hideLoading();
 }

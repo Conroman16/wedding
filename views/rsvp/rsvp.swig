@@ -17,12 +17,18 @@
 					<div class="form-group">
 						<label for="email">Email Address</label>
 						<input type="text" class="form-control input" name="email" aria-label="Email address" match=".+@+.+\..+" required />
+						<small class="form-text text-muted">In case we need to get in touch with you between now and the big day</small>
 					</div>
 
+					{% if SmsEnabled %}
 					<div class="form-group">
 						<label for="phone">Phone Number</label>
-						<input type="tel" class="form-control input" name="phone" aria-label="Phone number" minlength="10" />
+						<div class="input-group">
+							<span class="input-group-addon">+1</span>
+							<input type="tel" class="form-control input" name="phone" aria-label="Phone number" minlength="10" />
+						</div>
 					</div>
+					{% endif %}
 
 					<fieldset class="form-group">
 						<label for="attending">Attending</label><br>
@@ -41,7 +47,9 @@
 					</fieldset>
 
 					<div class="form-group attendees-group hide">
-						<label for="attendees">Extra Guests</label>
+						<label for="attendees">
+							Extra Guests <small class="text-muted smaller">from your household</small>
+						</label>
 						<div class="input-group">
 							<span class="input-group-addon decrementer js-decrement-extra-guests">&ndash;</span>
 							<input type="text" class="form-control input center" name="attendees" aria-label="Name" value="0" numonly />
@@ -49,14 +57,16 @@
 						</div>
 					</div>
 
-					<div class="form-check">
-						<label class="form-check-label">
-							<input class="form-check-input" type="checkbox">
-							Include a message
-						</label>
+					<div class="form-group">
+						<div class="form-check">
+							<label class="form-check-label">
+								<input class="form-check-input message-toggle" type="checkbox">
+								Include a message
+							</label>
+						</div>
 					</div>
 
-					<div class="form-group">
+					<div class="form-group message-group hide">
 						<label for="message">Message</label>
 						<textarea class="form-control input multiline" name="message" aria-label="Message"></textarea>
 					</div>
