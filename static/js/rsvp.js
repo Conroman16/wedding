@@ -43,7 +43,9 @@ function removeValidation($input){
 }
 
 function clearForm(){
-	$('.input').val('');
+	$('.input[type="text"], .input[type="tel"], textarea.input').val('');
+	$('.input[type="radio"].default, .input[type="check"].default').prop('checked', true);
+	$('.attendees-group').addClass('hide');
 }
 
 function getValue($i){

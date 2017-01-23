@@ -34,7 +34,7 @@
 						</div>
 						<div class="form-check form-check-inline">
 							<label class="form-check-label">
-								<input type="radio" class="form-check-input input" name="attending" value="0" checked />
+								<input type="radio" class="form-check-input input default" name="attending" value="0" checked />
 								No
 							</label>
 						</div>
@@ -47,6 +47,13 @@
 							<input type="text" class="form-control input center" name="attendees" aria-label="Name" value="0" numonly />
 							<span class="input-group-addon incrementer js-increment-extra-guests">+</span>
 						</div>
+					</div>
+
+					<div class="form-check">
+						<label class="form-check-label">
+							<input class="form-check-input" type="checkbox">
+							Include a message
+						</label>
 					</div>
 
 					<div class="form-group">
