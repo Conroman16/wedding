@@ -40,6 +40,10 @@ table{
 	border-collapse: collapse;
 }
 
+.smaller{
+	zoom: 0.9;
+}
+
 .left-col{
 	text-align: center;
 	transform: translateY(calc(50% - 1.35em));
