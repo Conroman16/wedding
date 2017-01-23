@@ -34,6 +34,11 @@ module.exports = (sequelize, DataTypes) => {
 		attendees: {
 			type: DataTypes.INTEGER,
 			allowNull: false
+		},
+		vegetarianMeal: {
+			type: DataTypes.BOOLEAN,
+			allowNull: false,
+			defaultValue: false
 		}
 	});
 };

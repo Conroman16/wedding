@@ -39,7 +39,8 @@ module.exports = () => {
 							phone: req.body.phone,
 							message: req.body.message,
 							isAttending: isAttending,
-							attendees: attendees
+							attendees: attendees,
+							vegetarianMeal: req.body.vegetarianMeal || false
 						})
 							.then((newRsvp) => next(null, newRsvp))
 							.catch((err) => next(err));
