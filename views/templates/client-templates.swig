@@ -22,46 +22,52 @@
 		<br><br>
 		<div class="row">
 			<div class="col">
-				<table class="max-width">
-					<% for item in items %>
-						<tr>
-							<td><strong><{ item.key|title }></strong></td><td><{ item.value }></td>
-						</tr>
-					<% endfor %>
-				</table>
+				<div class="card">
+					<div class="card-block">
+						<h5 class="card-title center">HOST INFO</h5>
+						<table class="max-width">
+							<% for item in items %>
+							<tr>
+								<td><strong><{ item.key|title }></strong></td>
+								<td><{ item.value }></td>
+							</tr>
+							<% endfor %>
+						</table>
+					</div>
+				</div>
 			</div>
 		</div>
 		<br><br>
 		<div class="row">
 			<% for node in nodes %>
 				<div class="col">
-					<table>
-						<tr>
-							<td colspan="4" class="center">
-								<strong>Node <{ node.id }></strong>
-							</td>
-						</tr>
-						<tr>
-							<td><strong>Status</strong></td>
-							<td><{ node.status }></td>
-						</tr>
-						<tr>
-							<td><strong>Memory</strong></td>
-							<td><{ node.memory }></td>
-						</tr>
-						<tr>
-							<td><strong>CPU</strong></td>
-							<td><{ node.cpu }></td>
-						</tr>
-						<tr>
-							<td><strong>Uptime</strong></td>
-							<td><{ node.uptime }></td>
-						</tr>
-						<tr>
-							<td><strong>Unstable Restarts</strong></td>
-							<td><{ node.unstableRestarts }></td>
-						</tr>
-					</table>
+					<div class="card">
+						<div class="card-block">
+							<h5 class="card-title center">Node <{ node.id }></h5>
+							<table class="max-width">
+								<tr>
+									<td><strong>Status</strong></td>
+									<td class="center"><{ node.status }></td>
+								</tr>
+								<tr>
+									<td><strong>Memory Usage</strong></td>
+									<td class="center"><{ node.memory }></td>
+								</tr>
+								<tr>
+									<td><strong>CPU Usage</strong></td>
+									<td class="center"><{ node.cpu }></td>
+								</tr>
+								{#<tr>#}
+									{#<td><strong>Uptime</strong></td>#}
+									{#<td class="center"><{ node.uptime }></td>#}
+								{#</tr>#}
+								<tr>
+									<td><strong>Unstable Restarts</strong></td>
+									<td class="center"><{ node.unstableRestarts }></td>
+								</tr>
+							</table>
+						</div>
+					</div>
 				</div>
 			<% endfor %>
 		</div>
