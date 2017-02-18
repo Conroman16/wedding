@@ -13,6 +13,11 @@ let db = require('./db'),
 	events = require('./lib/events'),
 	logger = require('./lib/logger');
 
+// Suppress bluebird warnings
+//  - This app does not directly depend on bluebird (and probably never will now that ES6 includes native native Promises),
+//  - so its warnings aren't really important at this point
+require('bluebird').config({ warnings: false });
+
 events.init();
 
 db.sequelize.sync().then(() => {
