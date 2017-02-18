@@ -5,7 +5,6 @@
 {% endblock %}
 
 {% block body %}
-
     {#<br>#}
     {#<a href="{{ LoginPath }}">Login</a>#}
 	<div class="register-form-wrap container">
