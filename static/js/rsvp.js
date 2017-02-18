@@ -27,13 +27,12 @@ $(function(){
 	});
 
 	var $attendingRadio = $('input[name="attending"]');
-	var $attendeesGroup = $('.attendees-group');
 	$attendingRadio.change(function(){
 		var newVal = JSON.parse($(this).val());
 		if (newVal)
-			$attendeesGroup.removeClass('hide');
+			showAttendees();
 		else
-			$attendeesGroup.addClass('hide');
+			hideAttendees();
 	});
 
 	$('.message-toggle').change(function(){
@@ -43,6 +42,18 @@ $(function(){
 			$('.message-group').addClass('hide');
 	});
 });
+
+function showAttendees(){
+	var $attendeesGroup = $('.attendees-group');
+	$attendeesGroup.removeClass('hide');
+	$attendeesGroup.find('.input[name="attendees"]').val('1');
+}
+
+function hideAttendees(){
+	var $attendeesGroup = $('.attendees-group');
+	$attendeesGroup.addClass('hide');
+	$attendeesGroup.find('.input[name="attendees"]').val('0');
+}
 
 function removeValidation($input){
 	$input.closest('.form-group').removeClass('has-danger');

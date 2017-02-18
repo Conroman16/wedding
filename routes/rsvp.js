@@ -28,8 +28,6 @@ module.exports = () => {
 
 				let isAttending = JSON.parse(req.body.attending);
 				let attendees = JSON.parse(req.body.attendees || '0');
-				if (isAttending)
-					attendees++;
 
 				async.series([
 					(next) => {
