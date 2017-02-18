@@ -21,7 +21,7 @@
 			<div class="col"></div>
 			<div class="col-7">
 				<h1 class="uc-header">Under Construction</h1>
-				<img class="uc-img" src="/static/img/under-construction-ring.png" />
+				<img class="uc-img" src="/static/img/heart.png" width="450" />
 				<p class="uc-body">
 					This site is still under construction.  It will be up and running soon!
 				</p>
