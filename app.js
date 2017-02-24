@@ -7,6 +7,16 @@ if (!process.env.NODE_ENV){
 
 console.log(`${process.env.NODE_ENV.toUpperCase()} MODE`);
 
+let config = require('./lib/config');
+let opbeat = require('opbeat');
+// if (config.isProd){
+	 opbeat.start({
+		appId: '***REMOVED***',
+		organizationId: '***REMOVED***',
+		secretToken: '***REMOVED***'
+	});
+// }
+
 require('./lib/extensions');  // Configure extensions
 let db = require('./db'),
 	server = require('./lib/server'),
