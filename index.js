@@ -13,7 +13,7 @@ pm2.connect(!usePm2Daemon, () => {
 		script: 'app.js',
 		name: config.appName,
 		exec_mode: 'cluster',
-		instances: instances,
+		instances: config.isDev ? 2 : instances,
 		max_memory_restart: `${memory}M`,
 		merge_logs: true,
 		env: process.env
