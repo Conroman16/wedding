@@ -36,7 +36,7 @@
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
     "pg": "^6.1.2",
-    "pm2": "^2.2.3",
+    "pm2": "^2.4.1",
     "redis": "^2.6.3",
     "sequelize": "^3.28.0",
     "swig-templates": "^2.0.2",
