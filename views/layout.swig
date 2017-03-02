@@ -44,6 +44,7 @@
 <div class="body-wrap">
 	{% block body %}{% endblock %}
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-browser/0.1.0/jquery.browser.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
@@ -51,25 +52,29 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/swig/1.4.1/swig.min.js"></script>
 <script>window.swig || document.write('<script src="/static/cdnbackup/swig.js"><\/script>')</script>
+<script src="/static/js/swigfilters.js"></script>
 <script src="/static/js/loader.js"></script>
 <script src="/static/js/lazyload.js"></script>
 <script src="/static/js/countdown.js"></script>
 <script id="init">
+	window.swig.setDefaults({
+		varControls: [ '<{', '}>' ],
+		tagControls: [ '<%', '%>' ]
+	});
+	_.each(window.filters, function(filterFunc, name){
+	    window.swig.setFilter(name, filterFunc);
+	});
 	$(function(){
 		if ($.browser.mobile)
 			$('body').addClass('mobile');
 
 		window.templates = window.templates || {};
-		window.swig.setDefaults({
-			varControls: [ '<{', '}>' ],
-		    tagControls: [ '<%', '%>' ]
-		});
 
 		var templs = $('script[type="text/x-swig-template"]');
-		$.each(templs, function(indx){
-			var templ = $(templs[indx]);
+		_.each(templs, function(temp){
+			var templ = $(temp);
 			var templName = templ.data('name') || templ.attr('id').replace(/-/g, '_');
-			window.templates[templName] = swig.compile(templ.html());
+			window.templates[templName] = window.swig.compile(templ.html());
 		});
 
 		window.lazyloader.init();
