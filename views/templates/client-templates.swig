@@ -28,7 +28,7 @@
 						<table class="max-width">
 							<% for item in items %>
 							<tr>
-								<td><strong><{ item.key|title }></strong></td>
+								<td><strong><{ item.key|capfirst }></strong></td>
 								<td><{ item.value }></td>
 							</tr>
 							<% endfor %>
@@ -57,10 +57,6 @@
 									<td><strong>CPU Usage</strong></td>
 									<td class="center"><{ node.cpu }></td>
 								</tr>
-								{#<tr>#}
-									{#<td><strong>Uptime</strong></td>#}
-									{#<td class="center"><{ node.uptime }></td>#}
-								{#</tr>#}
 								<tr>
 									<td><strong>Unstable Restarts</strong></td>
 									<td class="center"><{ node.unstableRestarts }></td>
