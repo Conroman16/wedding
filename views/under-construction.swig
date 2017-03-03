@@ -24,6 +24,8 @@
 				<img class="uc-img" src="/static/img/heart.png" width="450" />
 				<p class="uc-body">
 					This site is still under construction.  It will be up and running soon!
+					<br>
+					Check back on or after <time datetime="{{ AvailableDate }}"><strong>{{ AvailableDateString }}</strong></time>.
 				</p>
 			</div>
 			<div class="col"></div>
