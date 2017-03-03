@@ -12,7 +12,7 @@
 				<a class="nav-link" href="/">Home</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="/rsvp">RSVP</a>
+				{% if RsvpEnabled %}<a class="nav-link" href="/rsvp">RSVP</a>{% endif %}
 			</li>
 			<li class="nav-item">
 				{% if IsNotAuthed %}<a class="nav-link" href="{{ LoginPath }}">Login</a>{% endif %}
