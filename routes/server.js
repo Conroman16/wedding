@@ -6,9 +6,7 @@ let _ = require('underscore');
 
 module.exports = () => {
 
-	router.get('/', (req, res) => {
-		res.render('server/about');
-	});
+	router.get('/', (req, res) => res.render('server/about'));
 
 	router.get('/data', (req, res) => {
 		pm2.describe(config.appName, (err, description) => {
