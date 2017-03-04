@@ -27,6 +27,7 @@
 <script src="/static/js/swigfilters.js"></script>
 <script src="/static/js/loader.js"></script>
 <script src="/static/js/lazyload.js"></script>
+<script src="/static/js/tabs.js"></script>
 <script src="/static/js/countdown.js"></script>
 <script id="init">
 	if (window.config.analyticsLoaded)
