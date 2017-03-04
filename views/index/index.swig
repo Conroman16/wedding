@@ -19,16 +19,37 @@
 
 	<div class="container">
 		<section class="tabs-wrapper">
-			<ul class="tabs row">
-				<li class="active col-xl-2">Accommodations</li>
-				<li class="col-xl-2">Favorite movies</li>
-				<li class="col-xl-2">About</li>
-				<li class="col-xl-2">Favorite movies</li>
-				<li class="col-xl-2">About</li>
-			</ul>
+			<div class="tabs row">
+				<div class="tab-item col-xl active">
+					<span class="text">Accommodations</span>
+				</div>
+				<div class="tab-item col-xl">
+					Registry
+				</div>
+				<div class="tab-item col-xl">
+					Wedding Party
+				</div>
+				<div class="tab-item col-xl">
+					Ceremony & Reception
+				</div>
+				<div class="tab-item col-xl">
+					Menu
+				</div>
+				<div class="tab-item col-xl">
+					Request a Song
+				</div>
+			</div>
+			{#<ul class="tabs row">#}
+				{#<li class="tab-item active col-xl-2">Accommodations</li>#}
+				{#<li class="tab-item col-xl-2">Registry</li>#}
+				{#<li class="tab-item col-xl-2">Wedding Party</li>#}
+				{#<li class="tab-item col-xl-2">Ceremony & Reception</li>#}
+				{#<li class="tab-item col-xl-2">Menu</li>#}
+				{#<li class="tab-item col-xl-2">Request a Song</li>#}
+			{#</ul>#}
 
 			<ul class="tab__content">
-				<li class="active">
+				<li class="tab-item active">
 					<div class="content__wrapper">
 						<h2 class="text-color">Accommodations</h2>
 						<p>
@@ -46,28 +67,94 @@
 						</p>
 					</div>
 				</li>
-				<li>
+				<li class="tab-item">
 					<div class="content__wrapper">
-						<h2 class="text-color">Herro</h2>
+						<h2 class="text-color">Registry</h2>
 					</div>
 				</li>
-				<li>
+				<li class="tab-item">
 					<div class="content__wrapper">
-						<h2 class="text-color">About</h2>
+						<h2 class="text-color">Wedding Party</h2>
+						<h3>The Ladies</h3>
+						<ul>
+							<li>
+								<strong>Larissa Clark</strong>
+								Matron of Honor
+							</li>
+							<li>
+								<strong>Alaina Triplett</strong>
+								Bridesmaid
+							</li>
+							<li>
+								<strong>Rachel Soliday</strong>
+								Bridesmaid
+							</li>
+							<li>
+								<strong>Lizzy Hansen</strong>
+								Bridesmaid
+							</li>
+						</ul>
 
-						<p>Created by <a class="text-color" href="http://lewihussey.com" target="_blank">Lewi Hussey</a></p>
+						<h3>The Gents</h3>
+						<ul>
+							<li>
+								<strong>Nicholas Clark</strong>
+								Best Man
+							</li>
+							<li>
+								<strong>Ben Cooper</strong>
+								Groomsman
+							</li>
+							<li>
+								<strong>Jeff Green</strong>
+								Groomsman
+							</li>
+							<li>
+								<strong>Evan Mills</strong>
+								Groomsman
+							</li>
+							{#<li>#}
+								{#<strong>Corbin Soliday</strong>#}
+								{#Usher#}
+							{#</li>#}
+							{#<li>#}
+								{#<strong>Antonio Griffin</strong>#}
+								{#Usher#}
+							{#</li>#}
+						</ul>
 					</div>
 				</li>
-				<li>
+				<li class="tab-item">
 					<div class="content__wrapper">
-						<h2 class="text-color">Herro</h2>
+						<h2 class="text-color">Ceremony & Reception</h2>
+						<dl>
+							<dt>Location:</dt>
+							<dd>Olde Mill Emporium</dd>
+							<dd>168 S. Main St.</dd>
+							<dd>Parkville, MO 64152</dd>
+							<dt>Date:</dt>
+							<dd>October 14, 2017 at 6 pm</dd>
+							<dd>Reception to follow</dd>
+						</dl>
 					</div>
 				</li>
-				<li>
+				<li class="tab-item">
 					<div class="content__wrapper">
-						<h2 class="text-color">About</h2>
-
-						<p>Created by <a class="text-color" href="http://lewihussey.com" target="_blank">Lewi Hussey</a></p>
+						<h2 class="text-color">Menu</h2>
+						<p>
+							<a href="http://www.twoguysandagrill.biz/">Two Guys and a Grill</a> will be catering dinner.
+							Please mark on your RSVP if you would prefer to have a vegan brisket made with seitan.
+						</p>
+					</div>
+				</li>
+				<li class="tab-item">
+					<div class="content__wrapper">
+						<h2 class="text-color">Request a Song</h2>
+						<p>
+							Do you know a song that you'd really like played at the wedding reception? Is there one that you'd just
+							cry for eight hours if you didn't get to dance to it? Well, worry no more, because we'd love for you to
+							send us your song requests for the reception! All you need to do is email your requests to us.
+						</p>
 					</div>
 				</li>
 			</ul>
