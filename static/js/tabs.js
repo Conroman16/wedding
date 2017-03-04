@@ -12,10 +12,10 @@ $(document).ready(function(){
 	// Set height of wrapper on page load
 	tabWrapper.height(activeTabHeight);
 
-	$(".tabs > li").on("click", function() {
+	$(".tabs > .tab-item").on("click", function() {
 
 		// Remove class from active tab
-		$(".tabs > li").removeClass("active");
+		$(".tabs > .tab-item").removeClass("active");
 
 		// Add class active to clicked tab
 		$(this).addClass("active");
@@ -27,13 +27,13 @@ $(document).ready(function(){
 		activeTab.fadeOut(250, function() {
 
 			// Remove active class all tabs
-			$(".tab__content > li").removeClass("active");
+			$(".tab__content > .tab-item").removeClass("active");
 
 			// Get index of clicked tab
 			var clickedTabIndex = clickedTab.index();
 
 			// Add class active to corresponding tab
-			$(".tab__content > li").eq(clickedTabIndex).addClass("active");
+			$(".tab__content > .tab-item").eq(clickedTabIndex).addClass("active");
 
 			// update new active tab
 			activeTab = $(".tab__content > .active");
