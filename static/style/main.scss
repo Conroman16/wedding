@@ -13,8 +13,13 @@
 }
 
 body{
-	//background-color: $backgroundColor;
 	background: url('/static/img/BrownPaper.png');
+
+	&:not(.mobile){
+		.navbar{
+			display: none;
+		}
+	}
 
 	&.mobile{
 		overflow-x: hidden;
