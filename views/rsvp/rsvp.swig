@@ -1,11 +1,10 @@
 {% extends '../layout.swig' %}
 
 {% block body %}
-	<div class="container">
+	<div class="container rsvp-container">
 		<br><br>
 		<div class="row">
-			<div class="col"></div>
-			<div class="col-6">
+			<div class="col-xl">
 				<form class="form rsvp-form">
 					<input type="hidden" class="form-control input" name="token" value="{{ token }}" />
 
@@ -76,7 +75,6 @@
 					</div>
 				</form>
 			</div>
-			<div class="col"></div>
 		</div>
 	</div>
 {% endblock %}

@@ -1,6 +1,6 @@
 $textColor: gold;
 //$bgColor: #650011;
-$bgColor: rgba(0,0,0,0);
+$bgColor: rgba(0,0,0,0.1);
 //$bgColor: rgba(117,0,0,0.25);
 
 nav.tabs{
@@ -20,7 +20,7 @@ nav.tabs{
 	transition-duration: .5s;
 }
 
-.text-color{
+.tab-header{
 	color: #fff;
 	transition-duration: .5s;
 }
@@ -38,16 +38,17 @@ nav.tabs{
 	text-align: center;
 	vertical-align: middle;
 	border: 1px solid red;
-	margin-top: 3.5vh;
+	margin: 3.5vh 0;
+	line-height: 2.25em;
 
 	.tab-item{
 		border: 1px solid green;
-		height: 7vh;
 		display: table-cell;
-
-		.text{
-			vertical-align: middle;
-		}
+		font-family: 'Satisfy', sans-serif;
+		color: #fff;
+		font-size: 2em;
+		vertical-align: middle;
+		padding: 0.5em;
 	}
 }
 

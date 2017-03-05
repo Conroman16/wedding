@@ -15,6 +15,15 @@
 body{
 	//background-color: $backgroundColor;
 	background: url('/static/img/BrownPaper.png');
+
+	&.mobile{
+		overflow-x: hidden;
+		width: 100%;
+
+		.container{
+			width: 100%;
+		}
+	}
 }
 
 .clearfix:after {
@@ -51,6 +60,10 @@ table{
 	zoom: 0.9;
 }
 
+.nostyle{
+	list-style: none;
+}
+
 .left-col{
 	text-align: center;
 	transform: translateY(calc(50% - 1.35em));
@@ -75,16 +88,12 @@ table{
 	z-index: 1400;
 }
 
-body.mobile{
-	overflow-x: hidden;
-
-	.container{
-		width: 100%;
-	}
-}
-
 .container{
-	width: 70%;
+	width: 82%;
+
+	&.rsvp-container{
+		width: 35%;
+	}
 }
 
 .banner-text{
