@@ -4,7 +4,7 @@ $(function(){
 	var tabWrapper = $('.tab__content');
 
 	if (slug){
-		$el = $('.tab-item[data-slug="' + slug + '"]');
+		$el = $('[data-slug="' + slug + '"]');
 		$el.addClass('active');
 	}
 	else
@@ -16,23 +16,26 @@ $(function(){
 	activeTab.show();
 	tabWrapper.height(activeTabHeight);
 
-	$('.tabs > .tab-item').on('click', function() {
-		$('.tabs .tab-item').removeClass('active');
+	$('.tabs .tab-item').on('click', function() {
 		var $this = $(this);
+
+		if (activeTab.data('slug') === $this.data('slug'))
+			return;
+
+		window.location.hash = slug = $this.data('slug');
+		$('.tabs .tab-item').removeClass('active');
 		$this.addClass('active');
-		window.location.hash = $this.data('slug');
 
 		activeTab.fadeOut(250, function() {
-			$('.tab__content .tab-item').removeClass('active');
-			activeTab = $('.tab__content .tab-item[data-slug="' + $this.data('slug') + '"]');
+			$('.tab__content .tab-content').removeClass('active');
+			activeTab = $('.tab__content .tab-content[data-slug="' + $this.data('slug') + '"]');
 			activeTab.addClass('active');
 			activeTabHeight = activeTab.outerHeight();
 
-			// Animate height of wrapper to new tab height
-			tabWrapper.stop().delay(50).animate({
+			tabWrapper.stop().animate({
 				height: activeTabHeight
 			}, 500, function() {
-				activeTab.delay(50).fadeIn(250);
+				activeTab.fadeIn(250);
 			});
 		});
 	});
