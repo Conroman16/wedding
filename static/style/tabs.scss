@@ -4,14 +4,7 @@ $bgColor: rgba(0,0,0,0.1);
 //$bgColor: rgba(117,0,0,0.25);
 
 nav.tabs{
-	z-index: 9;
-	border-bottom: 1px solid rgba(0, 0, 0, .1);
 	color: white;
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	padding: 20px 0;
 	text-align: center;
 }
 
@@ -25,41 +18,32 @@ nav.tabs{
 	transition-duration: .5s;
 }
 
-.tabs-wrapper{
-	width: 80%;
-	margin: 0 auto;
-}
-
-.tab-item{
-	@include no-highlight ();
-}
-
 .tabs{
 	text-align: center;
-	vertical-align: middle;
-	border: 1px solid red;
 	margin: 3.5vh 0;
 	line-height: 2.25em;
 
 	.tab-item{
-		border: 1px solid green;
-		display: table-cell;
+		@include no-highlight ();
 		font-family: 'Satisfy', sans-serif;
 		color: #fff;
 		font-size: 2em;
-		vertical-align: middle;
 		padding: 0.5em;
+		cursor: pointer;
+
+		&.active{
+			color: #222;
+			cursor: default;
+		}
 	}
 }
 
 .tab__content{
-	//@include drop-shadow(0, 1px, 100px, 2px);
 	background-color: $bgColor;
 	position: relative;
 	width: 100%;
-	//border-radius: 5px;
 
-	>.tab-item{
+	.tab-content{
 		width: 100%;
 		position: absolute;
 		top: 0;
@@ -70,7 +54,6 @@ nav.tabs{
 
 		.content__wrapper{
 			text-align: center;
-			//border-radius: 5px;
 			width: 100%;
 			padding: 45px 40px 40px 40px;
 			background-color: $bgColor;
