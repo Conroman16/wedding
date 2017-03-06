@@ -48,7 +48,7 @@
 								A limited number of rooms have been reserved at the
 								<a href="http://www.marriott.com/hotels/travel/mcino-courtyard-kansas-city-at-briarcliff/">Courtyard Marriott at Briarcliff</a>.
 								<br>
-								<dl>
+								<dl class="address-dl">
 									<dt>Courtyard by Marriott Kansas City at Briarcliff</dt>
 									<dd>4000 North Mulberry Drive</dd>
 									<dd>Kansas City, MO 64116</dd>
@@ -64,23 +64,45 @@
 							</p>
 						</div>
 						<div class="col-md-6">
-							<iframe src="{{ HotelMapUrl }}" frameborder="0" style="border:0;width:100%;height:100%;" allowfullscreen></iframe>
+							<iframe class="map-frame" src="{{ HotelMapUrl }}" frameborder="0" allowfullscreen></iframe>
 						</div>
 					</div>
 				</div>
 			</li>
 			<li class="tab-content" data-slug="registry">
 				<div class="content__wrapper">
-					<a href="https://www.amazon.com/wedding/share/kennedystietheknot">Amazon</a>
-					<a href="https://www.bedbathandbeyond.com/store/giftregistry/view_registry_guest.jsp?registryId=544219735&eventType=Wedding">
-						Bed, Bath, and Beyond
-					</a>
-					<strong>** If you would like to send something directly to our house, please send to.</strong>
-					<dl>
-						<dt>Connor & Julia</dt>
-						<dd>1903 NW 70th St</dd>
-						<dd>Kansas City, MO 64151</dd>
-					</dl>
+					<div class="row">
+						<div class="col">
+							<h2>You're so sweet to think of us!</h2>
+							<p>You can access our various registries by clicking on the images below.</p>
+						</div>
+					</div>
+					<br><br>
+					<div class="row">
+						<div class="col-md-6">
+							<a href="https://www.amazon.com/wedding/share/kennedystietheknot">
+								<img class="registry-img" src="/static/img/amazon_logo.png" alt="Amazon" />
+							</a>
+							<br><br>
+						</div>
+						<div class="col-md-6">
+							<a href="https://www.bedbathandbeyond.com/store/giftregistry/view_registry_guest.jsp?registryId=544219735&eventType=Wedding">
+								<img class="registry-img" src="/static/img/bbnb_logo.png" alt="Bed, Bath & Beyond" />
+							</a>
+						</div>
+					</div>
+					<br><br><br>
+					<div class="row">
+						<div class="col">
+							<strong>** If you would like to send something directly to our house, please send to.</strong>
+							<br><br>
+							<dl class="address-dl">
+								<dt>Connor & Julia</dt>
+								<dd>1903 NW 70th St</dd>
+								<dd>Kansas City, MO 64151</dd>
+							</dl>
+						</div>
+					</div>
 				</div>
 			</li>
 			<li class="tab-content" data-slug="weddingparty">
@@ -106,6 +128,7 @@
 									Bridesmaid
 								</li>
 							</ul>
+							<br><br>
 						</div>
 						<div class="col-md-6">
 							<h3>The Gents</h3>
@@ -141,19 +164,26 @@
 			</li>
 			<li class="tab-content" data-slug="events">
 				<div class="content__wrapper">
-					<dl>
-						<dt>Location</dt>
-						<dd>Olde Mill Emporium</dd>
-						<dd>168 S. Main St.</dd>
-						<dd>Parkville, MO 64152</dd>
-						<dt>Date</dt>
-						<dd>October 14, 2017 at 6 pm</dd>
-						<dd>Reception to follow</dd>
-					</dl>
-					<p>
-						<a href="http://www.twoguysandagrill.biz/">Two Guys and a Grill</a> will be catering dinner.
-						Please mark on your RSVP if you would prefer to have a vegan brisket made with seitan.
-					</p>
+					<div class="row">
+						<div class="col-md-6">
+							<dl class="address-dl">
+								<dt>Location</dt>
+								<dd>Olde Mill Emporium</dd>
+								<dd>168 S. Main St.</dd>
+								<dd>Parkville, MO 64152</dd>
+								<dt>Date</dt>
+								<dd>October 14, 2017 at 6 pm</dd>
+								<dd>Reception to follow</dd>
+							</dl>
+							<p>
+								<a href="http://www.twoguysandagrill.biz/">Two Guys and a Grill</a> will be catering dinner.
+								Please mark on your RSVP if you would prefer to have a vegan brisket made with seitan.
+							</p>
+						</div>
+						<div class="col-md-6">
+							<iframe class="map-frame" src="{{ VenueMapUrl }}" frameborder="0" allowfullscreen></iframe>
+						</div>
+					</div>
 				</div>
 			</li>
 			<li class="tab-content" data-slug="requestasong">

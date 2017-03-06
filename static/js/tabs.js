@@ -16,8 +16,8 @@ $(function(){
 	activeTab.show();
 	tabWrapper.height(activeTabHeight);
 
-	$('.tabs .tab-item').on('click', function() {
-		var $this = $(this);
+	function handleTabChange(self) {
+		var $this = $(self);
 
 		if (activeTab.data('slug') === $this.data('slug'))
 			return;
@@ -38,5 +38,13 @@ $(function(){
 				activeTab.fadeIn(250);
 			});
 		});
+	}
+
+	$('.tabs .tab-item').on('click', function(){
+		handleTabChange(this);
+	});
+	$('.nav-tab-link').on('click', function(){
+		handleTabChange(this);
+		$('.navbar-toggler').click();
 	});
 });
