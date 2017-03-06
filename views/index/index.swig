@@ -4,7 +4,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col header-img-wrap">
-				<img src="/static/img/heart.png" class="header-img" />
+				<img src="/static/img/heart_350px.png" class="header-img" />
 			</div>
 		</div>
 		<div class="tabs row">
