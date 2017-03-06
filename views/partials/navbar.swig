@@ -8,15 +8,12 @@
 	</a>
 	<div class="collapse navbar-collapse align-middle" id="navbarNav">
 		<ul class="navbar-nav mr-auto">
-			<li class="nav-item active">
-				<a class="nav-link" href="/">Home</a>
-			</li>
-			<li class="nav-item">
-				{% if RsvpEnabled %}<a class="nav-link" href="/rsvp">RSVP</a>{% endif %}
-			</li>
-			<li class="nav-item">
-				{% if IsNotAuthed %}<a class="nav-link" href="{{ LoginPath }}">Login</a>{% endif %}
-			</li>
+			{#<li class="nav-item">#}
+				{#{% if RsvpEnabled %}<a class="nav-link" href="/rsvp">RSVP</a>{% endif %}#}
+			{#</li>#}
+			{#<li class="nav-item">#}
+				{#{% if IsNotAuthed %}<a class="nav-link" href="{{ LoginPath }}">Login</a>{% endif %}#}
+			{#</li>#}
 			<li class="nav-item">
 				<a href="/#home" class="nav-link nav-tab-link" data-slug="home">Home</a>
 			</li>
