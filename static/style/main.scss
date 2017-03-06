@@ -13,7 +13,19 @@
 }
 
 body{
-	background: url('/static/img/BrownPaper.png');
+	background: url($littleBackgroundImgUrl);
+
+	a{
+		color: $wcMaroon;
+
+		&:hover{
+			color: lighten($wcMaroon, 2.5%);
+		}
+
+		&:active{
+			color: darken($wcMaroon, 5%);
+		}
+	}
 
 	&:not(.mobile){
 		.navbar{
@@ -101,28 +113,6 @@ table{
 	}
 }
 
-//.banner-text{
-//	margin: auto;
-//	width: 100%;
-//}
-
-//.banner-text > h1 {
-//	padding-top: 240px;
-//	font-size: 100px;
-//	font-weight: bold;
-//	font-style: normal;
-//	font-stretch: normal;
-//	text-align: center;
-//}
-//.banner-text > h2 {
-//	font-size: 16px;
-//	font-weight: bold;
-//	font-style: normal;
-//	font-stretch: normal;
-//	letter-spacing: 2.7px;
-//	text-align: center;
-//	color: #ddd;
-//}
 .header-bg {
 	position: relative;
 	margin:auto;
@@ -151,4 +141,15 @@ body {
 // UI helpers
 .shadow{
 	@include drop-shadow(0, 5px, 15px, rgba(0,0,0,0.05));
+}
+
+.header-img-wrap{
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	margin-top: 4vh;
+
+	.header-img{
+		width: 350px;
+	}
 }
