@@ -33,9 +33,17 @@
 					<div class="row align-items-center">
 						<div class="col-lg-12">
 							<div class="banner-text">
-								<h1>C + J</h1>
-								<h2>Yep, that's right, we're tying the knot!</h2>
+								<h2>Yep, that's right, Connor and Julia are tying the knot!</h2>
+								<br>
+								<p>
+									After nearly 5 years of great times together, Connor decided to seal the deal on Christmas Eve at the
+									<a href="http://www.magic-tree.org/">Magic Tree</a> in Columbia, MO.
+								</p>
 							</div>
+							{#<div class="countdown-wrap invisible navbar-text">#}
+								{#<span class="countdown"></span>#}
+								{#<div><small>until the ceremony begins</small></div>#}
+							{#</div>#}
 						</div>
 					</div>
 				</div>
