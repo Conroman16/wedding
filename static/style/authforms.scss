@@ -1,7 +1,16 @@
 @import 'mixins';
 
+body.mobile{
+	.auth-form{
+		width: 100%;
+	}
+}
+
 .auth-form{
 	@include drop-shadow();
 	border: 1px solid rgba(0,0,0,0.05);
+	margin: 5vh auto 0;
 	padding: 3em;
+	color: #fff;
+	width: 70%;
 }
