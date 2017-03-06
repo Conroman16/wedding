@@ -15,6 +15,17 @@ nav.tabs{
 	transition-duration: .5s;
 }
 
+body.mobile{
+	.tabs .tab-item{
+		display: none;
+
+		&.active{
+			color: #fff;
+			display: block;
+		}
+	}
+}
+
 .tabs{
 	text-align: center;
 	margin-top: 3.5vh;
