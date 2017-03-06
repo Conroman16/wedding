@@ -29,7 +29,6 @@
     "cookie-parser": "^1.4.3",
     "excel-export": "^0.5.1",
     "express": "^4.15.0",
-    "express-minify": "^0.2.0",
     "express-session": "^1.14.2",
     "juice": "^4.0.2",
     "mailgun-js": "^0.8.0",
