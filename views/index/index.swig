@@ -37,7 +37,7 @@
 								<br>
 								<p>
 									After nearly 5 years of great times together, Connor decided to seal the deal on Christmas Eve at the
-									<a href="http://www.magic-tree.org/">Magic Tree</a> in Columbia, MO.
+									<a href="http://www.magic-tree.org/" target="_blank">Magic Tree</a> in Columbia, MO.
 								</p>
 							</div>
 							{#<div class="countdown-wrap invisible navbar-text">#}
@@ -54,7 +54,7 @@
 						<div class="col-md-6">
 							<p>
 								A limited number of rooms have been reserved at the
-								<a href="http://www.marriott.com/hotels/travel/mcino-courtyard-kansas-city-at-briarcliff/">Courtyard Marriott at Briarcliff</a>.
+								<a href="http://www.marriott.com/hotels/travel/mcino-courtyard-kansas-city-at-briarcliff/" target="_blank">Courtyard Marriott at Briarcliff</a>.
 								<br>
 								<dl class="address-dl">
 									<dt>Courtyard by Marriott Kansas City at Briarcliff</dt>
@@ -64,7 +64,8 @@
 								</dl>
 								<br>
 								For reservations at a reduced rate, please visit
-								<a href="http://www.marriott.com/meeting-event-hotels/group-corporate-travel/groupCorp.mi?resLinkData=Duncan%20Kennedy%20Wedding%5Emcino%60DKWDKWA%7CDKWDKWB%60119.00%60USD%60false%604%6010/13/17%6010/15/17%609/22/17&app=resvlink&stop_mobi=yes">
+								<a href="http://www.marriott.com/meeting-event-hotels/group-corporate-travel/groupCorp.mi?resLinkData=Duncan%20Kennedy%20Wedding%5Emcino%60DKWDKWA%7CDKWDKWB%60119.00%60USD%60false%604%6010/13/17%6010/15/17%609/22/17&app=resvlink&stop_mobi=yes"
+								   target="_blank">
 									this page
 								</a>
 								or call and reserve your rooms under the
@@ -88,13 +89,13 @@
 					<br><br>
 					<div class="row">
 						<div class="col-md-6">
-							<a href="https://www.amazon.com/wedding/share/kennedystietheknot">
+							<a href="https://www.amazon.com/wedding/share/kennedystietheknot" target="_blank">
 								<img class="registry-img" src="/static/img/amazon_logo.png" alt="Amazon" />
 							</a>
 							<br><br>
 						</div>
 						<div class="col-md-6">
-							<a href="https://www.bedbathandbeyond.com/store/giftregistry/view_registry_guest.jsp?registryId=544219735&eventType=Wedding">
+							<a href="https://www.bedbathandbeyond.com/store/giftregistry/view_registry_guest.jsp?registryId=544219735&eventType=Wedding" target="_blank">
 								<img class="registry-img" src="/static/img/bbnb_logo.png" alt="Bed, Bath & Beyond" />
 							</a>
 						</div>
@@ -184,7 +185,7 @@
 								<dd>Reception to follow</dd>
 							</dl>
 							<p>
-								<a href="http://www.twoguysandagrill.biz/">Two Guys and a Grill</a> will be catering dinner.
+								<a href="http://www.twoguysandagrill.biz/" target="_blank">Two Guys and a Grill</a> will be catering dinner.
 								Please mark on your RSVP if you would prefer to have a vegan brisket made with seitan.
 							</p>
 						</div>
