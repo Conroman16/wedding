@@ -18,22 +18,22 @@
 				{% if IsNotAuthed %}<a class="nav-link" href="{{ LoginPath }}">Login</a>{% endif %}
 			</li>
 			<li class="nav-item">
-				<a href="#home" class="nav-link">Home</a>
+				<a href="/#home" class="nav-link nav-tab-link" data-slug="home">Home</a>
 			</li>
 			<li class="nav-item">
-				<a href="#accommodations" class="nav-link">Accommodations</a>
+				<a href="/#accommodations" class="nav-link nav-tab-link" data-slug="accommodations">Accommodations</a>
 			</li>
 			<li class="nav-item">
-				<a href="#registry" class="nav-link">Registry</a>
+				<a href="/#registry" class="nav-link nav-tab-link" data-slug="registry">Registry</a>
 			</li>
 			<li class="nav-item">
-				<a href="#weddingparty" class="nav-link">Wedding Party</a>
+				<a href="/#weddingparty" class="nav-link nav-tab-link" data-slug="weddingparty">Wedding Party</a>
 			</li>
 			<li class="nav-item">
-				<a href="#events" class="nav-link">Ceremony & Reception</a>
+				<a href="/#events" class="nav-link nav-tab-link" data-slug="events">Ceremony & Reception</a>
 			</li>
 			<li class="nav-item">
-				<a href="#requestasong" class="nav-link">Request a Song</a>
+				<a href="/#requestasong" class="nav-link nav-tab-link" data-slug="requestasong">Request a Song</a>
 			</li>
 			{% if IsAuthed %}
 			<li class="nav-item dropdown">
