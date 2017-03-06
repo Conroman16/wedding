@@ -11,7 +11,7 @@
 	{% block style %}{% endblock %}
 	{% include 'templates/client-templates.swig' %}
 </head>
-<body>
+<body class="bg-lazyload" data-url="/static/img/brownpaper.png" data-blur="true">
 {% include 'partials/navbar.swig' %}
 <div class="body-wrap">
 	{% block body %}{% endblock %}

@@ -7,8 +7,7 @@
 {% block body %}
 	<div class="login-form-wrap container">
 		<div class="row">
-			<div class="col"></div>
-			<div class="col-5">
+			<div class="col">
 				<form id="login-form" method="post" class="auth-form">
 					<div class="form-group row">
 						<label for="username" class="col-2 col-form-label">Email</label>
@@ -30,14 +29,12 @@
 						</div>
 					</div>
 					<div class="row">
-						<div class="col"></div>
-						<div class="col-2">
-							<input type="submit" value="Log In">
+						<div class="col">
+							<input class="btn btn-submit pull-right" type="submit" value="Log In">
 						</div>
 					</div>
 				</form>
 			</div>
-			<div class="col"></div>
 		</div>
 	</div>
 {% endblock %}

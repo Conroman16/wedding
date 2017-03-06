@@ -1,22 +1,12 @@
 {% extends '../layout.swig' %}
 
 {% block body %}
-	{#<div class="header-bg bg-lazyload" data-url="/static/img/background.jpg" data-blur="true">#}
-	{#<div class="header-bg">#}
-		{#<div class="container">#}
-			{#<div class="row align-items-center">#}
-				{#<div class="col-lg-12">#}
-					{#<div class="banner-text">#}
-						{#<h1>C + J</h1>#}
-						{#<h2>Yep, that's right, we're tying the knot!</h2>#}
-					{#</div>#}
-				{#</div>#}
-			{#</div>#}
-		{#</div>#}
-	{#</div>#}
-    {#<br>#}
-
 	<div class="container">
+		<div class="row">
+			<div class="col header-img-wrap">
+				<img src="/static/img/heart.png" class="header-img" />
+			</div>
+		</div>
 		<div class="tabs row">
 			<div class="tab-item col-xl active-default" data-slug="home">
 				<span class="text">Home</span>
@@ -52,25 +42,35 @@
 			</li>
 			<li class="tab-content" data-slug="accommodations">
 				<div class="content__wrapper">
-					<h2 class="tab-header">Accommodations</h2>
-					<p>
-						A limited number of rooms have been reserved at the
-						<a href="#">Courtyard Marriott at Briarcliff</a>.
-
-						For reservations at a reduced rate, please call and reserve your rooms under the <strong>"Duncan Kennedy Wedding"</strong>, or by following the reservation link
-						below.
-					</p>
-					<p>
-						Courtyard by Marriott Kansas City at Briarcliff
-						4000 North Mulberry Drive
-						Kansas City, MO 64116
-						<a href="tel:8168413300">(816) 841-3300</a>
-					</p>
+					<div class="row">
+						<div class="col-md-6">
+							<p>
+								A limited number of rooms have been reserved at the
+								<a href="http://www.marriott.com/hotels/travel/mcino-courtyard-kansas-city-at-briarcliff/">Courtyard Marriott at Briarcliff</a>.
+								<br>
+								<dl>
+									<dt>Courtyard by Marriott Kansas City at Briarcliff</dt>
+									<dd>4000 North Mulberry Drive</dd>
+									<dd>Kansas City, MO 64116</dd>
+									<dd><a href="tel:8168413300">(816) 841-3300</a></dd>
+								</dl>
+								<br>
+								For reservations at a reduced rate, please visit
+								<a href="http://www.marriott.com/meeting-event-hotels/group-corporate-travel/groupCorp.mi?resLinkData=Duncan%20Kennedy%20Wedding%5Emcino%60DKWDKWA%7CDKWDKWB%60119.00%60USD%60false%604%6010/13/17%6010/15/17%609/22/17&app=resvlink&stop_mobi=yes">
+									this page
+								</a>
+								or call and reserve your rooms under the
+								<strong>"Duncan Kennedy Wedding"</strong>
+							</p>
+						</div>
+						<div class="col-md-6">
+							<iframe src="{{ HotelMapUrl }}" frameborder="0" style="border:0;width:100%;height:100%;" allowfullscreen></iframe>
+						</div>
+					</div>
 				</div>
 			</li>
 			<li class="tab-content" data-slug="registry">
 				<div class="content__wrapper">
-					<h2 class="tab-header">Registry</h2>
 					<a href="https://www.amazon.com/wedding/share/kennedystietheknot">Amazon</a>
 					<a href="https://www.bedbathandbeyond.com/store/giftregistry/view_registry_guest.jsp?registryId=544219735&eventType=Wedding">
 						Bed, Bath, and Beyond
@@ -85,7 +85,6 @@
 			</li>
 			<li class="tab-content" data-slug="weddingparty">
 				<div class="content__wrapper">
-					<h2 class="tab-header">Wedding Party</h2>
 					<div class="row">
 						<div class="col-md-6">
 							<h3>The Ladies</h3>
@@ -127,14 +126,14 @@
 									<strong>Evan Mills</strong>
 									Groomsman
 								</li>
-								<li>
-									<strong>Corbin Soliday</strong>
-									Usher
-								</li>
-								<li>
-									<strong>Antonio Griffin</strong>
-									Usher
-								</li>
+								{#<li>#}
+									{#<strong>Corbin Soliday</strong>#}
+									{#Usher#}
+								{#</li>#}
+								{#<li>#}
+									{#<strong>Antonio Griffin</strong>#}
+									{#Usher#}
+								{#</li>#}
 							</ul>
 						</div>
 					</div>
@@ -142,7 +141,6 @@
 			</li>
 			<li class="tab-content" data-slug="events">
 				<div class="content__wrapper">
-					<h2 class="tab-header">Ceremony & Reception</h2>
 					<dl>
 						<dt>Location</dt>
 						<dd>Olde Mill Emporium</dd>
@@ -160,11 +158,10 @@
 			</li>
 			<li class="tab-content" data-slug="requestasong">
 				<div class="content__wrapper">
-					<h2 class="tab-header">Request a Song</h2>
 					<p>
 						Do you know a song that you'd really like played at the wedding reception? Is there one that you'd just
 						cry for eight hours if you didn't get to dance to it? Well, worry no more, because we'd love for you to
-						send us your song requests for the reception! All you need to do is email your requests to us.
+						send us your song requests for the reception! All you need to do is <a href="mailto:{{ AdminEmail }}">email</a> your requests to us.
 					</p>
 				</div>
 			</li>

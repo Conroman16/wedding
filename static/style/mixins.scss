@@ -48,4 +48,9 @@
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
-};
+}
+@mixin border-radius ($radius: 4px){
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	border-radius: $radius;
+}
