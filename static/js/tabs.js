@@ -1,14 +1,16 @@
 $(function(){
 	var slug = window.location.hash.replace('#', '');
-	var $el = $('.active-default');
+	var tabLabel = $('.active-default');
 	var tabWrapper = $('.tab__content');
 
 	if (slug){
-		$el = $('[data-slug="' + slug + '"]');
-		$el.addClass('active');
+		tabLabel = $('[data-slug="' + slug + '"]');
+		tabLabel.addClass('active');
 	}
-	else
-		$el.toggleClass('active-default active');
+	else {
+		tabLabel.removeClass('active-default');
+		tabLabel.addClass('active')
+	}
 
 	var activeTab = tabWrapper.find('.active');
 	var activeTabHeight = activeTab.outerHeight();
@@ -18,12 +20,19 @@ $(function(){
 
 	function handleTabChange(self) {
 		var $this = $(self);
+		$('.nav-link.nav-tab-link').removeClass('active');
 
 		if (activeTab.data('slug') === $this.data('slug'))
 			return;
 
 		window.location.hash = slug = $this.data('slug');
 		$('.tabs .tab-item').removeClass('active');
+
+		if ($this.is('.nav-link.nav-tab-link')) {
+			$this = $('.tab-item[data-slug="' + $this.data('slug') + '"]');
+			console.log('hi', $this, slug);
+		}
+
 		$this.addClass('active');
 
 		activeTab.fadeOut(250, function() {
