@@ -207,6 +207,3 @@
 		</ul>
 	</div>
 {% endblock %}
-
-{% block scripts %}
-{% endblock %}
