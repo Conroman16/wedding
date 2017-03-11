@@ -41,7 +41,7 @@ module.exports = () => {
 	});
 
 	router.get('/register', (req, res) => {
-		if (req.isAuthenticated())
+		if (req.isAuthenticated() || !config.registrationEnabled)
 			res.redirect('/');
 		else
 			res.render('auth/register');
