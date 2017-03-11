@@ -18,7 +18,7 @@
 </script>
 
 <script id="server-page-template" data-name="serverPage" type="text/x-swig-template">
-	<div class="container">
+	<div class="container server-page">
 		<br><br>
 		<div class="row">
 			<div class="col">
@@ -40,8 +40,8 @@
 		<br><br>
 		<div class="row">
 			<% for node in nodes %>
-				<div class="col">
-					<div class="card">
+				<div class="col-md-3">
+					<div class="card server-node-card">
 						<div class="card-block">
 							<h5 class="card-title center">Node <{ node.id }></h5>
 							<table class="max-width">
