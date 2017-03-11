@@ -48,15 +48,18 @@ module.exports = () => {
 	});
 
 	router.post('/register', (req, res) => {
+		if (!config.registrationEnabled)
+			return res.sendStatus(404);
+
 		let firstName = req.body.firstname || '';
 		let lastName = req.body.lastname || '';
 		let email = req.body.email || '';
 		let password = req.body.password || '';
 
 		if (!email)
-			res.status(500).send({success: false, error: 'invalid username'});
+			res.status(500).send({ success: false, error: 'invalid username' });
 		else if (!password)
-			res.status(500).send({success: false, error: 'invalid password'});
+			res.status(500).send({ success: false, error: 'invalid password' });
 		else
 			auth.createUser(email, password, firstName, lastName).then((newUser) => {
 				res.status(200).redirect('/');
