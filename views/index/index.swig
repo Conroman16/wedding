@@ -103,7 +103,7 @@
 					<br><br><br>
 					<div class="row">
 						<div class="col">
-							<strong>** If you would like to send something directly to our house, please send to.</strong>
+							<strong>** If you would like to send something directly to our house, please send to:</strong>
 							<br><br>
 							<dl class="address-dl">
 								<dt>Connor & Julia</dt>
