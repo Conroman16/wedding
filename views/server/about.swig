@@ -1,18 +1,7 @@
 {% extends '../layout.swig' %}
 
 {% block style %}
-<style>
-	td{
-		padding: 0.5em 1em
-	}
-	.host-row table, .host-row tr, .host-row td{
-		border: 1px solid;
-	}
-
-	tr:not(:first-of-type){
-		border-top: 1px solid rgba(0,0,0,0.3);
-	}
-</style>
+<link rel="stylesheet" href="/static/css/server.css" />
 {% endblock %}
 
 {% block body %}
