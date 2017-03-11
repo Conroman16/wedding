@@ -10,12 +10,18 @@ let async = require('async');
 module.exports = () => {
 
 	router.get('/', (req, res) => {
+		if (!config.rsvpEnabled)
+			return res.redirect('/');
+
 		auth.generateFormToken()
 			.then((token) => res.render('rsvp/rsvp', { token }))
 			.catch((err) => res.status(500).send(err));
 	});
 
 	router.post('/', (req, res) => {
+		if (!config.rsvpEnabled)
+			return res.sendStatus(404);
+
 		if (!req.body.token)
 			return res.status(500).send({ error: 'Invalid form token' });
 		else if (!req.body.name || !req.body.attending)
@@ -24,7 +30,7 @@ module.exports = () => {
 		auth.verifyFormToken(req.body.token)
 			.then((valid) => {
 				if (!valid)
-					return res.sendStatus(500);
+					return res.status(500).send({ error: 'Invalid form token' });
 
 				let isAttending = JSON.parse(req.body.attending);
 				let attendees = JSON.parse(req.body.attendees || '0');
