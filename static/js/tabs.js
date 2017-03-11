@@ -9,7 +9,7 @@ $(function(){
 	}
 	else {
 		tabLabel.removeClass('active-default');
-		tabLabel.addClass('active')
+		tabLabel.addClass('active');
 	}
 
 	var activeTab = tabWrapper.find('.active');

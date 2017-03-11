@@ -15,7 +15,7 @@
 				{#{% if IsNotAuthed %}<a class="nav-link" href="{{ LoginPath }}">Login</a>{% endif %}#}
 			{#</li>#}
 			<li class="nav-item">
-				<a href="/#home" class="nav-link nav-tab-link" data-slug="home">Home</a>
+				<a href="/#home" class="nav-link nav-tab-link active-default" data-slug="home">Home</a>
 			</li>
 			<li class="nav-item">
 				<a href="/#accommodations" class="nav-link nav-tab-link" data-slug="accommodations">Accommodations</a>
