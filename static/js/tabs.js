@@ -28,8 +28,10 @@ $(function(){
 		window.location.hash = slug = $this.data('slug');
 		$('.tabs .tab-item').removeClass('active');
 
-		if ($this.is('.nav-link.nav-tab-link'))
+		if ($this.is('.nav-link.nav-tab-link')) {
+			$this.addClass('active');
 			$this = $('.tab-item[data-slug="' + $this.data('slug') + '"]');
+		}
 
 		$this.addClass('active');
 
