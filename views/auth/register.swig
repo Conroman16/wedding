@@ -5,8 +5,6 @@
 {% endblock %}
 
 {% block body %}
-    {#<br>#}
-    {#<a href="{{ LoginPath }}">Login</a>#}
 	<div class="register-form-wrap container">
 		<div class="row">
 			<div class="col"></div>
@@ -47,9 +45,8 @@
 						</div>
 					</div>
 					<div class="row">
-						<div class="col"></div>
-						<div class="col-3">
-							<input type="submit" value="Create Account">
+						<div class="col">
+							<input type="submit" value="Create Account" class="btn btn-submit pull-right">
 						</div>
 					</div>
 				</form>
