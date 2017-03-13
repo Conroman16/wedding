@@ -82,13 +82,25 @@ module.exports = () => {
 	});
 
 	router.get('/all', (req, res) => {
-		db.Rsvp.findAll()
-			.then((rsvps) => {
-				if (!rsvps || rsvps.length < 0)
-					return res.send('nothing to show');
-				return res.send(rsvps);
-			})
-			.catch((err) => res.status(500).send(err));
+		async.waterfall([
+			(next) => {
+				auth.generateFormToken()
+					.then((token) => next(null, token))
+					.catch((err) => next(err));
+			},
+			(token, next) => {
+				let vd = { FormToken: token };
+				db.Rsvp.findAll()
+					.then((rsvps) => next(null, Object.assign(vd, { RSVPs: _.pluck(rsvps, 'dataValues') })))
+					.catch((err) => next(err));
+			}
+		], (err, viewData) => {
+			if (err){
+				console.error(err.stack || err);
+				return res.status(500).send({ success: false, error: err });
+			}
+			res.render('rsvp/all', viewData);
+		});
 	});
 
 	router.get('/export', (req, res) => {
@@ -117,8 +129,53 @@ module.exports = () => {
 			})
 			.catch((err) => {
 				console.error(err);
-				res.status(500).send();
+				res.status(500).send({ success: false, error: err });
 			});
+	});
+
+	router.post('/delete', (req, res) => {
+		if (!req.body.rsvpid || req.body.rsvpid <= 0)
+			return res.status(500).send({ success: false, error: 'Invalid RSVP ID' });
+
+		db.Rsvp.destroy({
+			where: {
+				id: req.body.rsvpid
+			}
+		})
+			.then((numDeleted) => res.status(200).send({ success: true }))
+			.catch((err) => res.status(500).send({ success: false, error: err.stack || err }));
+	});
+
+	router.post('/create', (req, res) => {
+		if (!req.body.token)
+			return res.status(500).send({ success: false, error: 'Invalid form token' });
+
+		async.series([
+			(next) => {
+				auth.verifyFormToken(req.body.token)
+					.catch((err) => next(err))
+					.then((valid) => {
+						if (!valid)
+							return next('Invalid form token');
+						next();
+					});
+			},
+			(next) => {
+				db.Rsvp.create(Object.assign(req.body, {
+					isAttending: JSON.parse(req.body.isAttending),
+					attendees: JSON.parse(req.body.attendees || '0'),
+					vegetarianMeal: JSON.parse(req.body.vegetarianMeal)
+				}))
+					.catch((err) => next(err))
+					.then((newRsvp) => next());
+			}
+		], (err) => {
+			if (err){
+				console.error(err.stack || err);
+				return res.status(500).send({ success: false, error: err });
+			}
+			res.send({ success: true });
+		});
 	});
 
 	return router;
