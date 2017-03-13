@@ -2,38 +2,43 @@
 
 {% block body %}
 	<div class="container all-rsvps-container">
-		<div class="new-rsvp-row">
-			<button class="new-rsvp-btn btn btn-success align-left">+ Add New</button>
-			<div class="new-rsvp-form-wrap hide">
-				<form class="new-rsvp-form form-inline" action="/rsvp/create">
-					<input class="form-token" type="hidden" value="{{ FormToken }}" />
+		<div class="row new-rsvp-row">
+			<div class="col">
+				<button class="new-rsvp-btn btn btn-success align-left">+ Add New</button>
+				<div class="new-rsvp-form-wrap hide">
+					<form class="new-rsvp-form form-inline" action="/rsvp/create">
+						<input class="form-token" type="hidden" value="{{ FormToken }}" />
 
-					<input class="form-control input" type="text" name="name" placeholder="Name" />
+						<input class="form-control input" type="text" name="name" placeholder="Name" />
 
-					<input class="form-control input" type="text" name="email" placeholder="Email" />
+						<input class="form-control input" type="text" name="email" placeholder="Email" />
 
-					<input class="form-control input" type="text" name="phone" placeholder="Phone" />
+						<input class="form-control input" type="text" name="phone" placeholder="Phone" />
 
-					<div class="form-check">
-						<label class="form-check-label">
-							<input class="form-check-input input" type="checkbox" name="isAttending"> Is Attending
-						</label>
-					</div>
+						<div class="form-check">
+							<label class="form-check-label">
+								<input class="form-check-input input" type="checkbox" name="isAttending"> Is Attending
+							</label>
+						</div>
 
-					<input class="form-control input" type="text" name="attendees" placeholder="Attendees" />
+						<input class="form-control input" type="text" name="attendees" placeholder="Attendees" />
 
-					<textarea class="form-control input" name="message" placeholder="Message"></textarea>
+						<textarea class="form-control input" name="message" placeholder="Message"></textarea>
 
-					<div class="form-check">
-						<label class="form-check-label">
-							<input class="form-check-input input" type="checkbox" name="vegetarianMeal"> Vegetarian Meal
-						</label>
-					</div>
+						<div class="form-check">
+							<label class="form-check-label">
+								<input class="form-check-input input" type="checkbox" name="vegetarianMeal"> Vegetarian Meal
+							</label>
+						</div>
 
-					<div class="submit-btn-wrap">
-						<button type="submit" class="btn btn-submit pull-right">Submit</button>
-					</div>
-				</form>
+						<div class="submit-btn-wrap">
+							<button type="submit" class="btn btn-submit pull-right">Submit</button>
+						</div>
+					</form>
+				</div>
+			</div>
+			<div class="col-1">
+				<a class="btn btn-secondary rsvp-export-btn" href="/rsvp/export">Export</a>
 			</div>
 		</div>
 		<div class="row row-labels">
