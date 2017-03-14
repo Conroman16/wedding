@@ -20,8 +20,8 @@ $(function(){
 	window.history.pushState({ slug: slug }, slug, './#' + slug);
 
 	function handleTabChange(newSlug, isFromPopstate) {
-		var $this = $('.tab-item[data-slug="' + newSlug + '"]');
 		slug = newSlug;
+		var $this = $('.tab-item[data-slug="' + slug + '"]');
 		$('.nav-link.nav-tab-link').removeClass('active');
 
 		if (activeTab.data('slug') === $this.data('slug'))
@@ -31,7 +31,6 @@ $(function(){
 			window.history.pushState({ slug: slug }, slug, './#' + slug);
 
 		$('.tabs .tab-item').removeClass('active');
-
 		$this.addClass('active');
 
 		activeTab.fadeOut(250, function() {
