@@ -1,30 +1,46 @@
 $(function(){
-	var slug = window.location.hash.replace('#', '') || 'home';
-	var tabLabel = $('.active-default');
+	var defaultSlug = $('.active-default').data('slug');
+	var slug = window.location.hash.replace('#', '') || defaultSlug;
+	var tabLabel = $('.tab-item.active-default');
 	var tabWrapper = $('.tab__content');
 
-	if (slug){
-		tabLabel = $('[data-slug="' + slug + '"]');
-		tabLabel.addClass('active');
-	}
-	else {
+	if (slug === defaultSlug){
 		tabLabel.removeClass('active-default');
 		tabLabel.addClass('active');
 	}
+	else {
+		tabLabel = $('.tab-item[data-slug="' + slug + '"]');
+		tabLabel.addClass('active');
+	}
 
-	var activeTab = tabWrapper.find('.active');
+	var activeTab = tabWrapper.find('[data-slug="' + slug + '"]');
 	var activeTabHeight = activeTab.outerHeight();
 
+	handleTabChange(slug, null, true);
 	activeTab.show();
 	tabWrapper.height(activeTabHeight);
 	window.history.pushState({ slug: slug }, slug, './#' + slug);
 
-	function handleTabChange(newSlug, isFromPopstate) {
+	function getFormAuthToken(form){
+		var $form = $(form);
+		$.post('/getformauthtoken')
+			.done(function(data){
+				$form.find('.form-auth-token').val(data.token);
+
+				var tokenTimeout = JSON.parse($form.data('tokentimeout'));
+				if (tokenTimeout){
+					setTimeout(function(){
+						$form.find('.form-auth-token').val('');
+					}, tokenTimeout);
+				}
+			});
+	}
+	function handleTabChange(newSlug, isFromPopstate, isInitialLoad) {
 		slug = newSlug;
 		var $this = $('.tab-item[data-slug="' + slug + '"]');
 		$('.nav-link.nav-tab-link').removeClass('active');
 
-		if (activeTab.data('slug') === $this.data('slug'))
+		if (!isInitialLoad && activeTab.data('slug') === $this.data('slug'))
 			return;
 
 		if (!isFromPopstate)
@@ -36,6 +52,11 @@ $(function(){
 		activeTab.fadeOut(250, function() {
 			$('.tab__content .tab-content').removeClass('active');
 			activeTab = $('.tab__content .tab-content[data-slug="' + slug + '"]');
+			var tabForm = activeTab.find('form');
+
+			if (!!tabForm.length && JSON.parse(tabForm.data('requestformtoken') || 'false') && !tabForm.find('.form-auth-token').val())
+				getFormAuthToken(tabForm);
+
 			activeTab.addClass('active');
 			activeTabHeight = activeTab.outerHeight();
 

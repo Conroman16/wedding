@@ -1,16 +1,17 @@
 let router = require('express').Router();
-let sms = require('../lib/sms');
+let auth = require('../lib/auth');
 
 module.exports = () => {
 
-    router.get('/', (req, res) => {
-		res.render('index/index');
-    });
+    router.get('/', (req, res) => res.render('index/index'));
 
-    router.get('/smstest', (req, res) => {
-		sms.send('***REMOVED***', 'Testing 1..2...3....')
-			.then((response) => res.send(response))
-			.catch((error) => res.status(500).send(error));
+    router.post('/getformauthtoken', (req, res) => {
+		auth.generateFormToken()
+			.catch((err) => {
+				console.error(err.stack || err);
+				res.status(500).send({ success: false, error: err });
+			})
+			.then((token) => res.send({ token: token }));
 	});
 
     return router;
