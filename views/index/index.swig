@@ -198,9 +198,9 @@
 			<li class="tab-content" data-slug="requestasong">
 				<div class="content__wrapper">
 					<p>
-						Do you know a song that you'd really like played at the wedding reception? Is there one that you'd just
-						cry for eight hours if you didn't get to dance to it? Well, worry no more, because we'd love for you to
-						send us your song requests for the reception! All you need to do is <a href="mailto:{{ AdminEmail }}">email</a> your requests to us.
+						Do you know a song that you'd really like played at the wedding reception? Is there one that you'd cry for hours if you didn't dance to it?
+						Well, worry no more, because we'd love for you to send us your song requests for the reception! All you need to do is
+						<a href="mailto:{{ AdminEmail }}">email</a> your requests to us or fill out the form below.
 					</p>
 					<br>
 					<div class="song-request-form-wrap">
@@ -218,7 +218,7 @@
 							</div>
 
 							<div class="form-group">
-								<strong><label for="notes">Notes</label></strong>
+								<label for="notes"><strong>Notes or Comments</strong>&nbsp;<small>about your request</small></label>
 								<textarea class="form-control input" name="notes" aria-label="notes"></textarea>
 							</div>
 
