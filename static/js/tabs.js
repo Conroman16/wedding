@@ -1,5 +1,5 @@
 $(function(){
-	var slug = window.location.hash.replace('#', '');
+	var slug = window.location.hash.replace('#', '') || 'home';
 	var tabLabel = $('.active-default');
 	var tabWrapper = $('.tab__content');
 
@@ -17,27 +17,26 @@ $(function(){
 
 	activeTab.show();
 	tabWrapper.height(activeTabHeight);
+	window.history.pushState({ slug: slug }, slug, './#' + slug);
 
-	function handleTabChange(self) {
-		var $this = $(self);
+	function handleTabChange(newSlug, isFromPopstate) {
+		var $this = $('.tab-item[data-slug="' + newSlug + '"]');
+		slug = newSlug;
 		$('.nav-link.nav-tab-link').removeClass('active');
 
 		if (activeTab.data('slug') === $this.data('slug'))
 			return;
 
-		window.location.hash = slug = $this.data('slug');
-		$('.tabs .tab-item').removeClass('active');
+		if (!isFromPopstate)
+			window.history.pushState({ slug: slug }, slug, './#' + slug);
 
-		if ($this.is('.nav-link.nav-tab-link')) {
-			$this.addClass('active');
-			$this = $('.tab-item[data-slug="' + $this.data('slug') + '"]');
-		}
+		$('.tabs .tab-item').removeClass('active');
 
 		$this.addClass('active');
 
 		activeTab.fadeOut(250, function() {
 			$('.tab__content .tab-content').removeClass('active');
-			activeTab = $('.tab__content .tab-content[data-slug="' + $this.data('slug') + '"]');
+			activeTab = $('.tab__content .tab-content[data-slug="' + slug + '"]');
 			activeTab.addClass('active');
 			activeTabHeight = activeTab.outerHeight();
 
@@ -50,10 +49,13 @@ $(function(){
 	}
 
 	$('.tabs .tab-item').on('click', function(){
-		handleTabChange(this);
+		handleTabChange($(this).data('slug'));
 	});
 	$('.nav-tab-link').on('click', function(){
-		handleTabChange(this);
+		handleTabChange($(this).data('slug'));
 		$('.navbar-toggler').click();
+	});
+	$(window).on('popstate', function(){
+		handleTabChange(window.history.state.slug || 'home', true);
 	});
 });
