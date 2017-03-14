@@ -31,7 +31,7 @@
     "express": "^4.15.2",
     "express-session": "^1.15.1",
     "juice": "^4.0.2",
-    "mailgun-js": "^0.8.0",
+    "mailgun-js": "^0.8.2",
     "node-sass-middleware": "^0.10.0",
     "opbeat": "^4.11.1",
     "passport": "^0.3.2",
