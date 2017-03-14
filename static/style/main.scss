@@ -41,6 +41,10 @@ body{
 		.container{
 			width: 100%;
 		}
+
+		.song-request-form{
+			width: 100%;
+		}
 	}
 }
 
@@ -143,7 +147,6 @@ body {
 	}
 }
 
-// UI helpers
 .shadow{
 	@include drop-shadow(0, 5px, 15px, rgba(0,0,0,0.05));
 }
@@ -181,5 +184,18 @@ body {
 
 	&:not(:first-of-type){
 		margin-top: 4em;
+	}
+}
+
+.song-request-form{
+	width: 40%;
+	margin: 0 auto;
+
+	label{
+		font-size: 1.2em;
+	}
+
+	.submit-wrap{
+		margin-top: 2em;
 	}
 }

@@ -202,8 +202,68 @@
 						cry for eight hours if you didn't get to dance to it? Well, worry no more, because we'd love for you to
 						send us your song requests for the reception! All you need to do is <a href="mailto:{{ AdminEmail }}">email</a> your requests to us.
 					</p>
+					<br>
+					<div class="song-request-form-wrap">
+						<form class="song-request-form" data-requestformtoken="true" data-tokentimeout="{{ '1000 * 60 * 5'|math }}">
+							<input type="hidden" class="input form-auth-token" name="formtoken" />
+
+							<div class="form-group">
+								<strong><label for="songname">Song Name</label></strong>
+								<input class="form-control input" name="songname" aria-label="songname" />
+							</div>
+
+							<div class="form-group">
+								<strong><label for="artist">Artist</label></strong>
+								<input class="form-control input" name="artist" aria-label="artist" />
+							</div>
+
+							<div class="form-group">
+								<strong><label for="notes">Notes</label></strong>
+								<textarea class="form-control input" name="notes" aria-label="notes"></textarea>
+							</div>
+
+							<div class="submit-wrap">
+								<input type="submit" class="submit btn" value="Submit Request" />
+							</div>
+						</form>
+					</div>
 				</div>
 			</li>
 		</ul>
 	</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+	$(function(){
+	    $('.song-request-form').submit(function(ev){
+	        ev.preventDefault();
+	        var postData = {
+	            formtoken: $('.input.form-auth-token').val(),
+				songname: $('.input[name="songname"]').val(),
+				artist: $('.input[name="artist"]').val(),
+				notes: $('.input[name="notes"]').val()
+			};
+	        $.post('/songrequest', postData)
+				.fail(function(){
+				    swal({
+				        type: 'error',
+						title: 'Uh oh!',
+						html: true,
+						text: 'An error occurred while attempting to submit your request.  Please try again.  If you continue to experience issues, you may also email ' +
+						      'your request to us at <a href="mailto:{{ AdminEmail }}">{{ AdminEmail }}</a>.'
+					});
+				})
+				.done(function(){
+					$('.song-request-form .input').val('');
+				    swal({
+				        type: 'success',
+						title: 'Success!',
+						text: 'Your song request was submitted successfully!  Look forward to hearing it at the reception'
+					});
+
+				});
+		});
+	});
+</script>
 {% endblock %}
