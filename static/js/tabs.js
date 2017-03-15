@@ -21,6 +21,9 @@ $(function(){
 	tabWrapper.height(activeTabHeight);
 	window.history.pushState({ slug: slug }, slug, './#' + slug);
 
+	if (config.analyticsLoaded)
+		ga('send', 'pageview', location.pathname + location.hash);
+
 	function getFormAuthToken(form){
 		var $form = $(form);
 		$.post('/getformauthtoken')
