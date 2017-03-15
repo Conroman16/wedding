@@ -30,9 +30,6 @@
 <script src="/static/js/tabs.js"></script>
 <script src="/static/js/countdown.js"></script>
 <script id="init">
-	if (window.config.analyticsLoaded)
-		ga('send', 'pageview');
-
 	window.swig.setDefaults({
 		varControls: [ '<{', '}>' ],
 		tagControls: [ '<%', '%>' ]
