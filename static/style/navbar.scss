@@ -3,9 +3,11 @@
 }
 
 .countdown-wrap{
-	width: 30em;
-	text-align: right;
 	@include fade-in();
+	height: 4em;
+	margin-top: 2em;
+	font-weight: bold;
+	font-size: 120%;
 }
 
 body.mobile{
@@ -15,10 +17,6 @@ body.mobile{
 		margin: auto;
 		width: 100%;
 		background-color: #fff;
-	}
-
-	.countdown-wrap{
-		display: none;
 	}
 
 	.navbar-collapse{

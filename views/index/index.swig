@@ -40,10 +40,10 @@
 									<a href="http://www.magic-tree.org/" target="_blank">Magic Tree</a> in Columbia, MO.
 								</p>
 							</div>
-							{#<div class="countdown-wrap invisible navbar-text">#}
-								{#<span class="countdown"></span>#}
-								{#<div><small>until the ceremony begins</small></div>#}
-							{#</div>#}
+							<div class="countdown-wrap invisible">
+								<span class="countdown"></span>
+								<div><small>until the ceremony begins</small></div>
+							</div>
 						</div>
 					</div>
 				</div>
