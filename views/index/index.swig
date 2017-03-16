@@ -36,7 +36,7 @@
 								<h2>Yep, that's right, Connor and Julia are tying the knot!</h2>
 								<br>
 								<p>
-									After nearly 5 years of great times together, Connor decided to seal the deal on Christmas Eve at the
+									After nearly 5 years of great times together, Connor decided to seal the deal on Christmas Night at the
 									<a href="http://www.magic-tree.org/" target="_blank">Magic Tree</a> in Columbia, MO.
 								</p>
 							</div>
