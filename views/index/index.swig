@@ -71,6 +71,10 @@
 								or call and reserve your rooms under the
 								<strong>"Duncan Kennedy Wedding"</strong>
 							</p>
+							<p>
+								The deadline for room reservations is
+								<strong><time datetime="{{ RoomReservationCloseDate }}">{{ RoomReservationCloseDate|format('MMMM Do, YYYY') }}</time></strong>
+							</p>
 						</div>
 						<div class="col-md-6">
 							<iframe class="map-frame" src="{{ HotelMapUrl }}" frameborder="0" allowfullscreen></iframe>
