@@ -46,6 +46,9 @@ $(function(){
 		if (!isInitialLoad && activeTab.data('slug') === $this.data('slug'))
 			return;
 
+		if ($.browser.mobile)
+			$('.nav-tab-link[data-slug="' + slug + '"]').addClass('active');
+
 		if (!isFromPopstate)
 			window.history.pushState({ slug: slug }, slug, './#' + slug);
 
