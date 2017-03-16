@@ -44,8 +44,4 @@
 			{% endif %}
 		</ul>
 	</div>
-	{#<div class="countdown-wrap invisible navbar-text">#}
-		{#<span class="countdown"></span>#}
-		{#<div><small>until the ceremony begins</small></div>#}
-	{#</div>#}
 </nav>
