@@ -34,6 +34,7 @@ $(function(){
 				if (tokenTimeout){
 					setTimeout(function(){
 						$form.find('.form-auth-token').val('');
+						getFormAuthToken(form);
 					}, tokenTimeout);
 				}
 			});
