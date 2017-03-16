@@ -1,3 +1,5 @@
+@import 'https://fonts.googleapis.com/css?family=Roboto';
+
 #dev-data-banner-wrap{
 	z-index: 99999999;
 	width: 250px;
@@ -15,7 +17,7 @@
 			text-align: center;
 			padding: 6px 75px;
 			color: white;
-			font-family: 'Roboto';
+			font-family: 'Roboto', sans-serif;
 			font-weight: bold;
 			text-transform: uppercase;
 			letter-spacing: 1px;
