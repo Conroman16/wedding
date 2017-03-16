@@ -13,6 +13,14 @@
 	padding: 0;
 }
 
+h1,
+h2,
+h3,
+.header{
+	font-family: 'Open Sans', sans-serif;
+	font-weight: bold;
+}
+
 body{
 	background: url($littleBackgroundImgUrl);
 	font-family: 'Lato', sans-serif;
