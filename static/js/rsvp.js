@@ -143,13 +143,13 @@ function submitForm(){
 
 	if (validateForm()){
 		var postData = {
-			name: $name.val(),
-			email: $email.val(),
-			phone: $phone.val(),
-			token: $token.val(),
+			name: encodeURIComponent($name.val()),
+			email: encodeURIComponent($email.val()),
+			phone: encodeURIComponent($phone.val()),
+			token: encodeURIComponent($token.val()),
 			attending: !!JSON.parse($attending.val()),
-			attendees: $attendees.val(),
-			message: $message.val()
+			attendees: encodeURIComponent($attendees.val()),
+			message: encodeURIComponent($message.val())
 		};
 		$.post(url, postData).done(function(data){
 			swal({
