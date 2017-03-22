@@ -92,11 +92,19 @@
 					</div>
 					<br><br>
 					<div class="row">
+						<div class="col" target="_blank">
+							<a href="https://www.honeyfund.com/wedding/KennedysTieTheKnot" target="_blank">
+								<img class="registry-img" src="/static/img/honeyfund_logo.png" alt="HoneyFund" />
+							</a>
+						</div>
+					</div>
+					<br><br><br>
+					<div class="row">
 						<div class="col-md-6">
 							<a href="https://www.amazon.com/wedding/share/kennedystietheknot" target="_blank">
 								<img class="registry-img" src="/static/img/amazon_logo.png" alt="Amazon" />
 							</a>
-							<br><br>
+							<br><br><br>
 						</div>
 						<div class="col-md-6">
 							<a href="https://www.bedbathandbeyond.com/store/giftregistry/view_registry_guest.jsp?registryId=544219735&eventType=Wedding" target="_blank">

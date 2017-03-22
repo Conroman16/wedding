@@ -54,6 +54,11 @@ body{
 		.song-request-form{
 			width: 100%;
 		}
+
+		.registry-img{
+			width: 80%;
+			max-width: 80%;
+		}
 	}
 }
 
@@ -189,7 +194,7 @@ body {
 }
 
 .registry-img{
-	width: 50%;
+	max-width: 50%;
 
 	&:not(:first-of-type){
 		margin-top: 4em;
