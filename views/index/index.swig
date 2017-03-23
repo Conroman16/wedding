@@ -250,6 +250,8 @@
 {% endblock %}
 
 {% block scripts %}
+<script src="/static/js/tabs.js"></script>
+<script src="/static/js/countdown.js"></script>
 <script>
 	$(function(){
 	    $('.song-request-form').submit(function(ev){
