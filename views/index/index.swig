@@ -41,6 +41,9 @@
 								<a href="http://www.magic-tree.org/" target="_blank">Magic Tree</a> in Columbia, MO.
 							</p>
 						</div>
+						<div class="main-img-wrap">
+							<img src="/static/img/engagement_surprise.jpg" class="main-img" />
+						</div>
 						<div class="countdown-wrap invisible">
 							<span class="countdown"></span>
 							<div><small>until the ceremony begins</small></div>
