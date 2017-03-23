@@ -22,8 +22,17 @@ h3,
 }
 
 body{
-	background: url($littleBackgroundImgUrl);
+	background-color: $baseBackgroundColor;
 	font-family: 'Lato', sans-serif;
+
+	.body-bg{
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		opacity: 0;
+	}
 
 	a{
 		color: $wcMaroon;
@@ -116,7 +125,6 @@ table{
 .navbar-collapse{
 	z-index: 1200;
 	background-color: #fff;
-	//@include drop-shadow();
 }
 
 .navbar-brand{
@@ -142,9 +150,7 @@ table{
 	width: 100%;
 	height: 658px;
 	background-size: cover;
-	//background-image: url($littleBackgroundImgUrl);
 	color: #fff;
-
 }
 
 body {
@@ -158,6 +164,14 @@ body {
 	}
 	.bg-lazyload.loaded {
 		animation: sharpen .5s both;
+	}
+}
+
+.bg-lazyload{
+	@include fade-in();
+
+	&.ll-loaded{
+		opacity: 1;
 	}
 }
 
