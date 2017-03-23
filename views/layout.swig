@@ -32,6 +32,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js" integrity="sha256-egVvxkq6UBCQyKzRBrDHu8miZ5FOaVrjSqQqauKglKc=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/swig/1.4.1/swig.min.js" integrity="sha256-BKsa9gvc2mMcc2FH9VkoaAxnOhCn51AbSnpJLIgm1P8=" crossorigin="anonymous"></script>
 <script>window.swig || document.write('<script src="/static/cdnbackup/swig.js"><\/script>')</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js" integrity="sha256-1hjUhpc44NwiNg8OwMu2QzJXhD8kcj+sJA3aCQZoUjg=" crossorigin="anonymous"></script>
 <script src="/static/js/swigfilters.js"></script>
 <script src="/static/js/loader.js"></script>
 <script src="/static/js/lazyload.js"></script>
@@ -55,6 +56,12 @@
 			var templ = $(temp);
 			var templName = templ.data('name') || templ.attr('id').replace(/-/g, '_');
 			window.templates[templName] = window.swig.compile(templ.html());
+		});
+
+		_.each($('[data-datetime]'), function(dt){
+		    var $dt = $(dt);
+		    var m = moment($dt.data('datetime'));
+		    $dt.attr('title', m.format('MMMM Do, YYYY') + ' at ' + m.format('h:mma'));
 		});
 
 		window.lazyloader.init();
