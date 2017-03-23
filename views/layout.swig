@@ -9,6 +9,13 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" integrity="sha256-iXUYfkbVl5itd4bAkFH5mjMEN5ld9t3OHvXX3IU8UxU=" crossorigin="anonymous" />
 	<link rel="stylesheet" href="/static/css/main.css" />
 	{% block style %}{% endblock %}
+	<script class="postinit-remove">
+		window.config = {
+			analyticsToken: '{{ GoogleAnalyticsID }}',
+			weddingDate: '{{ EventDate }}',
+			adminEmail: '{{ AdminEmail }}'
+		}
+	</script>
 	{% include 'templates/client-templates.swig' %}
 </head>
 <body class="bg-lazyload" data-url="/static/img/brownpaper.jpg" data-blur="true">

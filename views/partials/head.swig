@@ -9,11 +9,4 @@
 		</div>
 	</div>
 {% endif %}
-<script class="postinit-remove">
-	window.config = {
-		analyticsToken: '{{ GoogleAnalyticsID }}',
-		weddingDate: '{{ EventDate }}',
-		adminEmail: '{{ AdminEmail }}'
-	}
-</script>
 {% include 'analytics.swig' %}
