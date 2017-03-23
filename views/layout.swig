@@ -27,8 +27,6 @@
 <script src="/static/js/swigfilters.js"></script>
 <script src="/static/js/loader.js"></script>
 <script src="/static/js/lazyload.js"></script>
-<script src="/static/js/tabs.js"></script>
-<script src="/static/js/countdown.js"></script>
 <script id="init">
 	window.swig.setDefaults({
 		varControls: [ '<{', '}>' ],
@@ -52,7 +50,8 @@
 		});
 
 		window.lazyloader.init();
-		window.countdown.bind('.countdown');
+		if (window.countdown)
+			window.countdown.bind('.countdown');
 	});
 </script>
 {% include 'partials/postinit.swig' %}
