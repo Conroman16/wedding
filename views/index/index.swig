@@ -45,7 +45,7 @@
 							<img src="/static/img/engagement_surprise.jpg" class="main-img" />
 						</div>
 						<div class="countdown-wrap invisible">
-							<span class="countdown"></span>
+							<span class="countdown" title="{{ EventDate|format('MMMM Do, YYYY') + ' at ' + EventDate|format('h:mma') }}"></span>
 							<div><small>until the ceremony begins</small></div>
 						</div>
 					</div>
