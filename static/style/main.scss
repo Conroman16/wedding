@@ -22,8 +22,24 @@ h3,
 }
 
 body{
-	background: url($littleBackgroundImgUrl);
+	background-color: $baseBackgroundColor;
 	font-family: 'Lato', sans-serif;
+	padding-bottom: 1em;
+
+	&.ll-loaded .body-bg{
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		opacity: 0;
+	}
+
+	.body-bg{
+		@include fade-in();
+		background-color: $baseBackgroundColor;
+		opacity: 1;
+	}
 
 	a{
 		color: $wcMaroon;
@@ -116,7 +132,6 @@ table{
 .navbar-collapse{
 	z-index: 1200;
 	background-color: #fff;
-	//@include drop-shadow();
 }
 
 .navbar-brand{
@@ -142,9 +157,7 @@ table{
 	width: 100%;
 	height: 658px;
 	background-size: cover;
-	//background-image: url($littleBackgroundImgUrl);
 	color: #fff;
-
 }
 
 body {
@@ -158,6 +171,14 @@ body {
 	}
 	.bg-lazyload.loaded {
 		animation: sharpen .5s both;
+	}
+}
+
+.bg-lazyload{
+	@include fade-in();
+
+	&.ll-loaded{
+		opacity: 1;
 	}
 }
 
@@ -211,5 +232,13 @@ body {
 
 	.submit-wrap{
 		margin-top: 2em;
+	}
+}
+
+.main-img-wrap{
+	margin-top: 2.5em;
+
+	.main-img{
+		max-width: 100%;
 	}
 }
