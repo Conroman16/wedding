@@ -24,6 +24,7 @@ h3,
 body{
 	background-color: $baseBackgroundColor;
 	font-family: 'Lato', sans-serif;
+	padding-bottom: 1em;
 
 	&.ll-loaded .body-bg{
 		position: absolute;
