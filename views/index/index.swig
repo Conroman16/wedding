@@ -1,6 +1,7 @@
 {% extends '../layout.swig' %}
 
 {% block body %}
+<div class="body-bg"></div>
 <div class="container">
 	<div class="row">
 		<div class="col header-img-wrap">
@@ -39,6 +40,9 @@
 								After nearly 5 years of great times together, Connor decided to seal the deal on Christmas Night at the
 								<a href="http://www.magic-tree.org/" target="_blank">Magic Tree</a> in Columbia, MO.
 							</p>
+						</div>
+						<div class="main-img-wrap">
+							<img src="/static/img/engagement_surprise.jpg" class="main-img" />
 						</div>
 						<div class="countdown-wrap invisible">
 							<span class="countdown"></span>
@@ -246,8 +250,11 @@
 {% endblock %}
 
 {% block scripts %}
+<script src="/static/js/tabs.js"></script>
+<script src="/static/js/countdown.js"></script>
 <script>
 	$(function(){
+		window.countdown.bind('.countdown');
 	    $('.song-request-form').submit(function(ev){
 	        ev.preventDefault();
 	        var postData = {
