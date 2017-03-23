@@ -1,7 +1,7 @@
 {% extends '../layout.swig' %}
 
 {% block body %}
-<div class="body-bg bg-lazyload" data-url="/static/img/brownpaper.jpg" data-blur="true"></div>
+<div class="body-bg"></div>
 <div class="container">
 	<div class="row">
 		<div class="col header-img-wrap">
