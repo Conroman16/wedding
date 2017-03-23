@@ -16,6 +16,7 @@
 			adminEmail: '{{ AdminEmail }}'
 		}
 	</script>
+	{% include 'partials/analytics.swig' %}
 	{% include 'templates/client-templates.swig' %}
 </head>
 <body class="bg-lazyload" data-url="/static/img/brownpaper.jpg" data-blur="true">

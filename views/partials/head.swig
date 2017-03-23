@@ -9,4 +9,3 @@
 		</div>
 	</div>
 {% endif %}
-{% include 'analytics.swig' %}
