@@ -254,6 +254,7 @@
 <script src="/static/js/countdown.js"></script>
 <script>
 	$(function(){
+		window.countdown.bind('.countdown');
 	    $('.song-request-form').submit(function(ev){
 	        ev.preventDefault();
 	        var postData = {

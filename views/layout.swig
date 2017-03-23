@@ -50,8 +50,6 @@
 		});
 
 		window.lazyloader.init();
-		if (window.countdown)
-			window.countdown.bind('.countdown');
 	});
 </script>
 {% include 'partials/postinit.swig' %}
