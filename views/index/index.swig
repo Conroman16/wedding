@@ -174,14 +174,14 @@
 								<strong>Evan Mills</strong>
 								Groomsman
 							</li>
-							{#<li>#}
-								{#<strong>Corbin Soliday</strong>#}
-								{#Usher#}
-							{#</li>#}
-							{#<li>#}
-								{#<strong>Antonio Griffin</strong>#}
-								{#Usher#}
-							{#</li>#}
+							<li>
+								<strong>Corbin Soliday</strong>
+								Usher
+							</li>
+							<li>
+								<strong>Antonio Griffin</strong>
+								Usher
+							</li>
 						</ul>
 					</div>
 				</div>
