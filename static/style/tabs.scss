@@ -43,6 +43,11 @@ body.mobile{
 		padding: 0.5em;
 		cursor: pointer;
 
+		a{
+			color: #fff;
+			text-decoration: none;
+		}
+
 		&.active{
 			color: #222;
 			cursor: default;

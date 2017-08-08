@@ -27,6 +27,11 @@
 		<div class="tab-item col-xl" data-slug="requestasong">
 			<span class="text">Request a Song</span>
 		</div>
+		<div class="tab-item col-xl">
+			<a href="/rsvp">
+				<span class="text" style="">RSVP</span>
+			</a>
+		</div>
 	</div>
 	<ul class="tab__content">
 		<li class="tab-content active-default" data-slug="home">
@@ -196,9 +201,16 @@
 							<dd>Olde Mill Emporium</dd>
 							<dd>168 S. Main St.</dd>
 							<dd>Parkville, MO 64152</dd>
+
 							<dt>Date</dt>
 							<dd>October 14, 2017 at 6 pm</dd>
 							<dd>Reception to follow</dd>
+
+							<dt>Event Timeline</dt>
+							<dd>6:00pm - Ceremony - Unity bell ringing to immediately follow ceremony</dd>
+							<dd>6:30pm - Cocktail Hour</dd>
+							<dd>7:30pm - Dinner Served</dd>
+							<dd>10:30pm - Send Off</dd>
 						</dl>
 						<p>
 							<a href="http://www.twoguysandagrill.biz/" target="_blank">Two Guys and a Grill</a> will be catering dinner.
