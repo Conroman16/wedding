@@ -34,14 +34,15 @@ module.exports = () => {
 
 				let isAttending = JSON.parse(req.body.attending);
 				let attendees = JSON.parse(req.body.attendees || '0');
+				let email = decodeURIComponent(req.body.email);
 
 				async.series([
 					(next) => {
 						db.Rsvp.create({
-							name: req.body.name,
-							email: req.body.email,
-							phone: req.body.phone,
-							message: req.body.message,
+							name: decodeURIComponent(req.body.name),
+							email: email,
+							phone: decodeURIComponent(req.body.phone),
+							message: decodeURIComponent(req.body.message),
 							isAttending: isAttending,
 							attendees: attendees,
 							vegetarianMeal: req.body.vegetarianMeal || false
@@ -58,7 +59,7 @@ module.exports = () => {
 							});
 					},
 					(next) => {
-						email.sendEmail(decodeURIComponent(req.body.email), 'RSVP Confirmation', {
+						email.sendEmail(email, 'RSVP Confirmation', {
 							Attending: isAttending,
 							NotAttending: !isAttending,
 							AttendingAlone: attendees === 1,
