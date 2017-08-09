@@ -32,6 +32,9 @@
 			<li class="nav-item">
 				<a href="/#requestasong" class="nav-link nav-tab-link" data-slug="requestasong">Request a Song</a>
 			</li>
+			<li class="nav-item">
+				<a href="/rsvp" class="nav-link nav-tab-link" data-slug="rsvp">RSVP</a>
+			</li>
 			{% if IsAuthed %}
 			<li class="nav-item dropdown">
 				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin</a>
