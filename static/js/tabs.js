@@ -40,6 +40,10 @@ $(function(){
 			});
 	}
 	function handleTabChange(newSlug, isFromPopstate, isInitialLoad) {
+		console.log(newSlug, isFromPopstate, isInitialLoad);
+		if (newSlug === 'rsvp')
+			return;
+
 		slug = newSlug;
 		var $this = $('.tab-item[data-slug="' + slug + '"]');
 		$('.nav-link.nav-tab-link').removeClass('active');

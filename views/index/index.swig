@@ -27,7 +27,7 @@
 		<div class="tab-item col-xl" data-slug="requestasong">
 			<span class="text">Request a Song</span>
 		</div>
-		<div class="tab-item col-xl">
+		<div class="tab-item col-xl" data-slug="rsvp">
 			<a href="/rsvp">
 				<span class="text" style="">RSVP</span>
 			</a>
