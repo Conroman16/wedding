@@ -21,7 +21,8 @@ require('./lib/extensions');  // Configure extensions
 let db = require('./db'),
 	server = require('./lib/server'),
 	events = require('./lib/events'),
-	logger = require('./lib/logger');
+	logger = require('./lib/logger'),
+	email = require('./lib/email');
 
 // Suppress bluebird warnings
 //  - This app does not directly depend on bluebird (and probably never will now that ES6 includes native native Promises),
@@ -29,6 +30,7 @@ let db = require('./db'),
 require('bluebird').config({ warnings: false });
 
 events.init();
+email.init();
 
 db.sequelize.sync().then(() => {
 	logger.init();
