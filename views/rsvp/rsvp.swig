@@ -59,6 +59,15 @@
 					<div class="form-group">
 						<div class="form-check">
 							<label class="form-check-label">
+								<input class="form-check-input vegetarian-meal input" type="checkbox" name="vegetarianmeal" aria-label="Vegetarian Meal?">
+								Vegetarian meal?
+							</label>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="form-check">
+							<label class="form-check-label">
 								<input class="form-check-input message-toggle" type="checkbox">
 								Include a message
 							</label>

@@ -139,6 +139,7 @@ function submitForm(){
 	var $attendees = $('.input[name="attendees"]');
 	var $token = $('.input[name="token"]');
 	var $message = $('.input[name="message"]');
+	var $vegetarianMeal = $('.input[name="vegetarianmeal"]');
 	var url = location.pathname;
 
 	if (validateForm()){
@@ -149,6 +150,7 @@ function submitForm(){
 			token: encodeURIComponent($token.val()),
 			attending: !!JSON.parse($attending.val()),
 			attendees: encodeURIComponent($attendees.val()),
+			vegetarianMeal: $vegetarianMeal[0].checked,
 			message: encodeURIComponent($message.val())
 		};
 		$.post(url, postData).done(function(data){

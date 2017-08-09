@@ -58,7 +58,7 @@ module.exports = () => {
 							});
 					},
 					(next) => {
-						email.sendEmail(req.body.email, 'RSVP Confirmation', {
+						email.sendEmail(decodeURIComponent(req.body.email), 'RSVP Confirmation', {
 							Attending: isAttending,
 							NotAttending: !isAttending,
 							AttendingAlone: attendees === 1,
