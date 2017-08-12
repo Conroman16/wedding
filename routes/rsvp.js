@@ -35,23 +35,33 @@ module.exports = () => {
 				let isAttending = JSON.parse(req.body.attending);
 				let attendees = JSON.parse(req.body.attendees || '0');
 				let rsvpEmail = decodeURIComponent(req.body.email);
+				let decodedName = decodeURIComponent(req.body.name);
+				let decodedMessage = decodeURIComponent(req.body.message);
+				let vegMeal = JSON.parse(req.body.vegetarianMeal || 'false');
 
 				async.series([
 					(next) => {
 						db.Rsvp.create({
-							name: decodeURIComponent(req.body.name),
+							name: decodedName,
 							email: rsvpEmail,
 							phone: decodeURIComponent(req.body.phone),
-							message: decodeURIComponent(req.body.message),
+							message: decodedMessage,
 							isAttending: isAttending,
 							attendees: attendees,
-							vegetarianMeal: req.body.vegetarianMeal || false
+							vegetarianMeal: vegMeal
 						})
 							.then((newRsvp) => next(null, newRsvp))
 							.catch((err) => next(err));
 					},
 					(next) => {
-						email.sendEmail(config.adminEmail, 'RSVP Posted', { title: 'RSVP Posted', data: JSON.stringify(req.body) })
+						email.sendEmail(config.adminEmail, 'RSVP Posted', {
+							name: decodedName,
+							email: rsvpEmail,
+							isAttending: isAttending,
+							attendees: attendees,
+							vegetarianMeal: vegMeal,
+							message: decodedMessage
+						}, email.templates.rsvpPost)
 							.then((response) => next(null, response))
 							.catch((err) => {
 								console.error('Unable to send RSVP post notification email', err);
