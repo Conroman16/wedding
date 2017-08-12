@@ -28,7 +28,7 @@
     "connect-redis": "^3.3.0",
     "cookie-parser": "^1.4.3",
     "excel-export": "^0.5.1",
-    "express": "^4.15.2",
+    "express": "^4.15.4",
     "express-session": "^1.15.1",
     "juice": "^4.0.2",
     "mailgun-js": "^0.8.2",
