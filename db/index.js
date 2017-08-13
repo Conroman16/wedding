@@ -42,4 +42,17 @@ Object.keys(db).forEach((modelName) => {
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
+db.checkStatus = () => {
+	return new Promise((resolve, reject) => {
+		sequelize.query('SELECT NOW()')
+			.catch((err) => reject({ ok: false, error: err }))
+			.then((result) => {
+				let sqlNowStr = new Date(result[0][0].now).toString();
+				if (sqlNowStr === 'Invalid Date')
+					return reject({ ok: false, error: sqlNowStr });
+				return resolve({ ok: true });
+			});
+	});
+};
+
 module.exports = db;
