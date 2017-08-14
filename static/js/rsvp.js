@@ -118,7 +118,6 @@ function validateForm(){
 		var required = !!$input.attr('required');
 		var text = getValue($input);
 		if (!regex.test(text)){
-			console.log('hi');
 			if (required && $input.val().length > 0) {
 				valid = false;
 				invalidateInput($input);
