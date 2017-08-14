@@ -10,12 +10,12 @@ module.exports = () => {
 
 		async.waterfall([
 			(next) => {
-				redis.checkStatus()
+				redis.healthCheck()
 					.catch((data) => next(data.error))
 					.then((data) => next(null, { redis: data }));
 			},
 			(data, next) => {
-				db.checkStatus()
+				db.healthCheck()
 					.catch((statusData) => next(statusData.error))
 					.then((statusData) => next(null, Object.assign(data, { db: statusData })));
 			}

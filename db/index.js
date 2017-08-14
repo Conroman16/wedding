@@ -42,7 +42,7 @@ Object.keys(db).forEach((modelName) => {
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
-db.checkStatus = () => {
+db.healthCheck = () => {
 	return new Promise((resolve, reject) => {
 		sequelize.query('SELECT NOW()')
 			.catch((err) => reject({ ok: false, error: err }))
