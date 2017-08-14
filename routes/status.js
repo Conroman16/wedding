@@ -2,11 +2,13 @@ let router = require('express').Router();
 let redis = require('../lib/redis');
 let async = require('async');
 let db = require('../db');
+let logger = require('../lib/logger');
 
 module.exports = () => {
 
 	// Check both the status of the DB and the status of the Redis server and respond accordingly
 	router.get('/', (req, res) => {
+		let failed = false;
 
 		async.waterfall([
 			(next) => {
@@ -25,17 +27,22 @@ module.exports = () => {
 
 			let retObj = { status: 'OK' };
 			if (!data.db.ok) {
+				failed = true;
 				Object.assign(retObj, {
 					status: 'ERROR',
 					db: { status: 'ERROR' }
 				});
 			}
 			if (!data.redis.ok) {
+				failed = true;
 				Object.assign(retObj, {
 					status: 'ERROR',
 					redis: { status: 'ERROR' }
 				});
 			}
+
+			if (failed)
+				logger.error('Application health check failed', data);
 
 			// ?showtestresults=true
 			if (req.query.showtestresults && JSON.parse(req.query.showtestresults))
