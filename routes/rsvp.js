@@ -6,6 +6,7 @@ let excel = require('../lib/excel');
 let _ = require('underscore');
 let config = require('../lib/config');
 let async = require('async');
+let logger = require('../lib/logger');
 
 module.exports = () => {
 
@@ -39,7 +40,7 @@ module.exports = () => {
 				let decodedMessage = decodeURIComponent(req.body.message);
 				let vegMeal = JSON.parse(req.body.vegetarianMeal || 'false');
 
-				async.series([
+				async.waterfall([
 					(next) => {
 						db.Rsvp.create({
 							name: decodedName,
@@ -52,6 +53,10 @@ module.exports = () => {
 						})
 							.then((newRsvp) => next(null, newRsvp))
 							.catch((err) => next(err));
+					},
+					(newRsvp, next) => {
+						logger.info('RSVP Submitted', newRsvp.dataValues);
+						next();
 					},
 					(next) => {
 						email.sendEmail(config.adminEmail, 'RSVP Posted', {
@@ -68,7 +73,7 @@ module.exports = () => {
 								next(err);
 							});
 					},
-					(next) => {
+					(resp, next) => {
 						email.sendEmail(rsvpEmail, 'RSVP Confirmation', {
 							Attending: isAttending,
 							NotAttending: !isAttending,
@@ -83,7 +88,7 @@ module.exports = () => {
 								next(err);
 							});
 					}
-				], (err, results) => {
+				], (err) => {
 					if (err)
 						return res.status(500).send(err);
 					return res.sendStatus(200);
