@@ -26,8 +26,8 @@ pm2.connect(!usePm2Daemon, () => {
 			if (err)
 				return console.error(err.stack || err);
 
-			bus.on('log:out', (packet) => console.log('[%s]:[log] %s', packet.process.name, packet.data));
-			bus.on('log:err', (packet) => console.error('[%s]:[err] %s', packet.process.name, packet.data));
+			bus.on('log:out', (packet) => console.log(`[${packet.process.name}]:[log] ${packet.data}`));
+			bus.on('log:err', (packet) => console.error(`[${packet.process.name}]:[err] ${packet.data}`));
 		});
 	});
 });
