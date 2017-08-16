@@ -1,6 +1,13 @@
 {% extends '../layout.swig' %}
 
 {% block body %}
+{% if closed %}
+	<div class="container rsvp-closed-container">
+		<h2>RSVPs are closed!</h2>
+	</div>
+{% endif %}
+
+{% if closed|not %}
 	<div class="container rsvp-container">
 		<br><br>
 		<div class="row">
@@ -86,6 +93,7 @@
 			</div>
 		</div>
 	</div>
+{% endif %}
 {% endblock %}
 
 {% block scripts %}

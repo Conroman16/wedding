@@ -13,6 +13,8 @@ module.exports = () => {
 	router.get('/', (req, res) => {
 		if (!config.rsvpEnabled)
 			return res.redirect('/');
+		else if (new Date >= config.rsvpCloseDate)
+			return res.render('rsvp/rsvp', { closed: true });
 
 		auth.generateFormToken()
 			.then((token) => res.render('rsvp/rsvp', { token }))
