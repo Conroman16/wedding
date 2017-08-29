@@ -128,8 +128,8 @@
 						<br><br>
 						<dl class="address-dl">
 							<dt>Connor & Julia</dt>
-							<dd>1903 NW 70th St</dd>
-							<dd>Kansas City, MO 64151</dd>
+							<dd>11009 Harrison St</dd>
+							<dd>Kansas City, MO 64131</dd>
 						</dl>
 					</div>
 				</div>
