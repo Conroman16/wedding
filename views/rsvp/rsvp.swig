@@ -54,7 +54,7 @@
 
 					<div class="form-group attendees-group hide">
 						<label for="attendees">
-							Total Guests Attending <small class="text-muted smaller">from your household</small>
+							Total Attendees (including yourself)
 						</label>
 						<div class="input-group">
 							<span class="input-group-addon decrementer js-decrement-extra-guests">&ndash;</span>
